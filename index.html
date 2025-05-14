@@ -7,94 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #86868b;
-            --accent-color: #2997ff;
-            --background-color: #ffffff;
-            --section-padding: 120px 24px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--background-color);
-            color: var(--primary-color);
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-        }
-
-        header {
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 24px;
-        }
-
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        .hero {
-            padding: var(--section-padding);
-            padding-top: 180px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.045em;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -103,8 +16,8 @@
             <nav>
                 <ul>
                     <li><a href="#work">Work</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -114,5 +27,37 @@
         <h1>I design digital products that make a difference</h1>
         <p>Combining user-centered approach with solid product strategy to create meaningful experiences</p>
     </section>
+
+    <section class="projects" id="work">
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/iplant-project.jpg" alt="iPlant Dashboard">
+                <div class="project-content">
+                    <h3>iPlant Smart Nursery</h3>
+                    <p>Advanced IoT plant monitoring system for efficient plant care.</p>
+                    <a href="pages/projects/iplant.html" class="project-link">View Case Study →</a>
+                </div>
+            </div>
+            <!-- More projects... -->
+        </div>
+    </section>
+
+    <section class="about-preview">
+        <h2>Hey, I'm Shay</h2>
+        <p>A UX designer based in Tel Aviv, passionate about creating intuitive and impactful digital experiences. I combine user-centered design principles with strategic thinking to solve complex problems.</p>
+        <a href="pages/about.html" class="cta-button">More About Me</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="pages/about.html">About</a>
+                <a href="pages/contact.html">Contact</a>
+                <a href="https://linkedin.com/in/shaylevi">LinkedIn</a>
+                <a href="https://twitter.com/shaylevi">Twitter</a>
+            </div>
+            <p class="copyright">© 2024 Shay Levi. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
