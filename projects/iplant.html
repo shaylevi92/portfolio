@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPlant - Smart Nursery Dashboard | Shay Levi</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <nav>
-                <a href="../index.html" class="logo">Shay Levi</a>
-                <ul class="nav-links">
-                    <li><a href="../index.html">Projects</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
-                </ul>
+    <header class="global-header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">Shay Levi</a>
+            <nav class="nav-links">
+                <a href="../index.html" class="active">Work</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+                <a href="#" class="button">Get My CV</a>
             </nav>
         </div>
     </header>
@@ -24,8 +24,13 @@
     <main class="project-page">
         <section class="project-hero">
             <div class="container">
-                <h1>iPlant</h1>
-                <h2>Smart IoT Greenhouse</h2>
+                <div class="project-header">
+                    <h1>iPlant</h1>
+                    <h2>Smart IoT Greenhouse</h2>
+                </div>
+                <div class="project-showcase">
+                    <img src="../images/projects/iplant/hero.jpg" alt="iPlant Dashboard Overview" class="hero-image">
+                </div>
                 <div class="project-meta">
                     <div class="tags">
                         <span class="tag">Dashboard</span>
@@ -35,12 +40,12 @@
                     </div>
                     <div class="project-details">
                         <div class="detail">
-                            <h4>Timeframe</h4>
+                            <h4>Duration</h4>
                             <p>9 Weeks</p>
                         </div>
                         <div class="detail">
                             <h4>Role</h4>
-                            <p>User Experience & User Interface</p>
+                            <p>UX/UI Design Lead</p>
                         </div>
                         <div class="detail">
                             <h4>Tools</h4>
@@ -53,16 +58,45 @@
 
         <section class="project-overview">
             <div class="container">
-                <h3>My Agriculture Story</h3>
-                <p>As a son of a farming family, the world of agriculture was always an inseparable part of my life. In my childhood, I worked in the family greenhouses together with my grandfather and father during summer vacations. The hard work and manual inspections of the plants were a daily routine, but they made me wonder how to improve the operation of the greenhouses and make it more efficient.</p>
-                
-                <h4>Precision agriculture, a revolution in the world of agriculture</h4>
-                <p>With the advancement of technology, I understood that it is possible to create a technological solution that will assist farmers in managing greenhouses in a more advanced and automated way. This is how the idea for developing a smart greenhouse management system was born.</p>
+                <h3>Project Overview</h3>
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <p>iPlant is an advanced IoT greenhouse management system that revolutionizes how farmers monitor and control their growing environments. Using AI and real-time data, the system provides comprehensive control over all aspects of plant care, from irrigation to climate control.</p>
+                    </div>
+                    <div class="overview-image">
+                        <img src="../images/projects/iplant/overview.jpg" alt="iPlant System Overview">
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="project-content">
+        <section class="project-challenge">
             <div class="container">
+                <h3>The Challenge</h3>
+                <div class="challenge-grid">
+                    <div class="challenge-item">
+                        <h4>Manual Operations</h4>
+                        <p>Traditional greenhouse management relies heavily on manual monitoring and adjustments, leading to inefficient resource use and increased labor costs.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h4>Data Fragmentation</h4>
+                        <p>Existing solutions often focus on single aspects of greenhouse management, forcing farmers to use multiple systems for comprehensive control.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h4>Complex Interfaces</h4>
+                        <p>Many current systems have steep learning curves and complicated interfaces that discourage adoption by traditional farmers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-solution">
+            <div class="container">
+                <h3>The Solution</h3>
+                <div class="solution-content">
+                    <div class="solution-features">
+                        <div class="feature">
+                            <i class="fas fa-robot"></i>
                 <div class="project-section">
                     <h3>Problem</h3>
                     <h4>Expensive operations and manual labor play for profit</h4>
