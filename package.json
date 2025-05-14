@@ -6,6 +6,7 @@
     "build": "tailwindcss -i ./css/style.css -o ./css/output.css --watch"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
@@ -43,4 +44,8 @@
     "url": "https://github.com/shaylevi92/portfolio/issues"
   },
   "homepage": "https://github.com/shaylevi92/portfolio#readme"
+=======
+    "tailwindcss": "^3.4.1"
+  }
+>>>>>>> 8e842ab (Implement Tailwind CSS with Apple-inspired design system)
 }

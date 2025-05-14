@@ -4,6 +4,7 @@
 
 @layer base {
   html {
+<<<<<<< HEAD
     scroll-behavior: smooth;
   }
   
@@ -13,10 +14,22 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-inter font-bold text-primary;
+=======
+    @apply antialiased;
+  }
+  
+  body {
+    @apply font-sans text-base text-secondary bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight text-primary;
+>>>>>>> 8e842ab (Implement Tailwind CSS with Apple-inspired design system)
   }
 }
 
 @layer components {
+<<<<<<< HEAD
   .btn {
     @apply px-6 py-3 rounded-lg transition-all duration-300;
   }
@@ -45,10 +58,27 @@
     @apply px-4 mx-auto max-w-7xl;
   }
 
+=======
+  .container {
+    @apply max-w-container mx-auto px-8;
+  }
+  
+>>>>>>> 8e842ab (Implement Tailwind CSS with Apple-inspired design system)
   .header {
     @apply sticky top-0 bg-white/85 backdrop-blur-xl border-b border-gray-200 z-50;
   }
   
+<<<<<<< HEAD
+=======
+  .nav-link {
+    @apply text-base text-secondary hover:text-primary transition-colors duration-300 px-4 py-2 rounded-md hover:bg-gray-50;
+  }
+  
+  .project-card {
+    @apply bg-gray-50 rounded-lg p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl border border-gray-200 hover:border-gray-300;
+  }
+  
+>>>>>>> 8e842ab (Implement Tailwind CSS with Apple-inspired design system)
   .placeholder-image {
     @apply bg-gray-100 rounded-lg w-full relative overflow-hidden transition-transform duration-300 hover:scale-[1.02];
   }
@@ -62,6 +92,7 @@
   }
   
   .section-title {
+<<<<<<< HEAD
     @apply text-4xl font-bold text-[#1A1F36] mb-16;
   }
   
@@ -100,5 +131,12 @@
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+=======
+    @apply text-3xl mb-lg tracking-tight;
+  }
+  
+  .section-description {
+    @apply text-lg text-secondary max-w-2xl mx-auto;
+>>>>>>> 8e842ab (Implement Tailwind CSS with Apple-inspired design system)
   }
 }
