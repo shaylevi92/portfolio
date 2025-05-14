@@ -1,62 +1,58 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shay Levi - UX Designer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <div class="logo">Shay Levi</div>
-            <nav>
-                <ul>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="pages/about.html">About</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <a href="index.html" class="logo">Shay Levi</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Work</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <section class="hero">
-        <h1>I design digital products that make a difference</h1>
-        <p>Combining user-centered approach with solid product strategy to create meaningful experiences</p>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>I design digital products that make a difference</h1>
+            <p>Combining user-centered approach with solid product strategy to create meaningful experiences</p>
+        </section>
 
-    <section class="projects" id="work">
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="images/iplant-project.jpg" alt="iPlant Dashboard">
-                <div class="project-content">
-                    <h3>iPlant Smart Nursery</h3>
-                    <p>Advanced IoT plant monitoring system for efficient plant care.</p>
-                    <a href="pages/projects/iplant.html" class="project-link">View Case Study →</a>
-                </div>
+        <section class="projects">
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3>iPlant Smart Nursery</h3>
+                        <p>Advanced IoT plant monitoring system for efficient plant care.</p>
+                        <a href="#" class="project-link">View Case Study →</a>
+                    </div>
+                </article>
             </div>
-            <!-- More projects... -->
-        </div>
-    </section>
+        </section>
 
-    <section class="about-preview">
-        <h2>Hey, I'm Shay</h2>
-        <p>A UX designer based in Tel Aviv, passionate about creating intuitive and impactful digital experiences. I combine user-centered design principles with strategic thinking to solve complex problems.</p>
-        <a href="pages/about.html" class="cta-button">More About Me</a>
-    </section>
+        <section class="about-preview">
+            <h2>Hey, I'm Shay</h2>
+            <p>A UX designer based in Tel Aviv, passionate about creating intuitive and impactful digital experiences. I combine user-centered design principles with strategic thinking to solve complex problems.</p>
+            <a href="about.html" class="cta-button">More About Me</a>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="pages/about.html">About</a>
-                <a href="pages/contact.html">Contact</a>
-                <a href="https://linkedin.com/in/shaylevi">LinkedIn</a>
-                <a href="https://twitter.com/shaylevi">Twitter</a>
+            <div class="footer-left">
+                <p>&copy; 2024 Shay Levi. All rights reserved.</p>
             </div>
-            <p class="copyright">© 2024 Shay Levi. All rights reserved.</p>
+            <div class="footer-right">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            </div>
         </div>
     </footer>
 </body>
