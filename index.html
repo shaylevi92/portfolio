@@ -4,32 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shay Levi - UX Designer & Developer</title>
-    <link href="./css/output.css" rel="stylesheet">
+    <link href="/css/output.css" rel="stylesheet">
 </head>
-<body class="antialiased">
+<body>
     <!-- Header -->
-    <header class="fixed w-full glass-effect z-50 border-b border-gray-100">
-        <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="./index.html" class="text-xl font-display hover-lift">Shay Levi</a>
+    <header class="site-header">
+        <nav class="container-custom h-20 flex items-center justify-between">
+            <a href="/" class="text-xl font-display font-bold hover:opacity-80 transition-opacity">
+                Shay Levi
+            </a>
             <div class="space-x-8">
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="./contact.html" class="nav-link">Contact</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
             </div>
         </nav>
     </header>
 
-    <!-- שאר התוכן נשאר אותו דבר, רק מעדכן את הקישורים -->
-    <!-- ... -->
-    <div class="project-grid">
-        <a href="./projects/iplant.html" class="project-card group animate-fade-in">
-            <!-- ... -->
-        </a>
-        <a href="./projects/careery.html" class="project-card group animate-fade-in [animation-delay:200ms]">
-            <!-- ... -->
-        </a>
-        <a href="./projects/eye-tracking.html" class="project-card group animate-fade-in [animation-delay:400ms]">
-            <!-- ... -->
-        </a>
-    </div>
-    <!-- ... -->
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container-custom text-center">
+            <h1 class="hero-title">
+                Creating Meaningful<br>Digital Experiences
+            </h1>
+            <p class="hero-description">
+                UX Designer & Developer passionate about crafting intuitive and innovative solutions 
+                that enhance people's lives through technology.
+            </p>
+            <div class="flex justify-center space-x-6 mt-12">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#about" class="btn-secondary">About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 bg-gray-50">
+        <div class="container-custom">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-center mb-16 animate-fade-up">
+                Featured Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- iPlant Project -->
+                <article class="project-card animate-fade-up [animation-delay:200ms]">
+                    <a href="/projects/iplant.html">
+                        <div class="project-image">
+                            <div class="project-image-placeholder"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">iPlant</h3>
+                            <p class="project-description">
+                                Smart IoT greenhouse management system with AI-powered automation
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">IoT</span>
+                                <span class="project-tag">AI</span>
+                                <span class="project-tag">Dashboard</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Careery Project -->
+                <article class="project-card animate-fade-up [animation-delay:400ms]">
+                    <a href="/projects/careery.html">
+                        <div class="project-image">
+                            <div class="project-image-placeholder bg-gradient-to-br from-blue-100 to-blue-200"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Careery</h3>
+                            <p class="project-description">
+                                AI-powered career development platform for personalized guidance
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">AI</span>
+                                <span class="project-tag">Mobile</span>
+                                <span class="project-tag">UX Research</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Eye Tracking Project -->
+                <article class="project-card animate-fade-up [animation-delay:600ms]">
+                    <a href="/projects/eye-tracking.html">
+                        <div class="project-image">
+                            <div class="project-image-placeholder bg-gradient-to-br from-green-100 to-green-200"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Eye Tracking Research</h3>
+                            <p class="project-description">
+                                Advanced eye tracking solutions for research and accessibility
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Research</span>
+                                <span class="project-tag">ML</span>
+                                <span class="project-tag">Hardware</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-center mb-16 animate-fade-up">
+                    About Me
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="animate-fade-up [animation-delay:200ms]">
+                        <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden">
+                            <!-- Profile image placeholder -->
+                            <div class="w-full h-full"></div>
+                        </div>
+                    </div>
+                    <div class="space-y-6 animate-fade-up [animation-delay:400ms]">
+                        <p class="text-lg text-gray-600">
+                            As a UX Designer and Developer, I bridge the gap between design and technology, 
+                            creating solutions that are both beautiful and functional. My background in both 
+                            fields allows me to approach problems holistically.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            I specialize in creating intuitive interfaces and developing innovative solutions 
+                            that make technology more accessible and enjoyable for everyone.
+                        </p>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-display font-bold">Skills</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="project-tag">UX Design</span>
+                                <span class="project-tag">UI Development</span>
+                                <span class="project-tag">User Research</span>
+                                <span class="project-tag">Prototyping</span>
+                                <span class="project-tag">Frontend Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-32 bg-gray-50">
+        <div class="container-custom text-center">
+            <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 animate-fade-up">
+                Let's Work Together
+            </h2>
+            <p class="text-xl text-gray-600 mb-12 animate-fade-up [animation-delay:200ms]">
+                Have a project in mind? Let's create something amazing.
+            </p>
+            <a href="/contact.html" class="btn-primary animate-fade-up [animation-delay:400ms]">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 mb-4 md:mb-0">
+                    &copy; 2024 Shay Levi. All rights reserved.
+                </p>
+                <div class="space-x-8">
+                    <a href="https://github.com/shaylevi92" class="footer-link">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="footer-link">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="footer-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
