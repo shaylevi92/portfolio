@@ -2,13 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
   }
+  
   body {
     @apply font-sans text-primary bg-white;
   }
+  
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
@@ -18,16 +36,100 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+  
   .nav-link {
-    @apply text-lg text-gray-600 hover:text-black transition-colors;
+    @apply text-lg text-gray-600 hover:text-black transition-all duration-300;
   }
+  
   .btn-primary {
-    @apply bg-accent text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition-all;
+    @apply bg-accent text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300
+           hover:transform hover:scale-105 hover:shadow-lg;
   }
+  
   .section-title {
     @apply text-display-lg font-display mb-8 text-center;
   }
+  
   .project-card {
-    @apply bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all;
+    @apply bg-gray-50 rounded-2xl p-6 transition-all duration-500
+           hover:shadow-xl hover:transform hover:scale-[1.02];
+  }
+  
+  /* Hero Section Styles */
+  .hero-title {
+    @apply text-display-xl font-display animate-[fadeIn_1s_ease-out];
+  }
+  
+  .hero-description {
+    @apply text-xl text-gray-600 animate-[fadeIn_1s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards];
+  }
+  
+  /* Project Section Styles */
+  .project-section {
+    @apply py-20 bg-gray-50;
+  }
+  
+  .project-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+  
+  .project-image {
+    @apply aspect-video bg-gray-200 rounded-xl mb-4 overflow-hidden;
+  }
+  
+  .project-title {
+    @apply text-2xl font-display mb-2 transition-colors duration-300;
+  }
+  
+  /* Case Study Specific Styles */
+  .case-study-hero {
+    @apply pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white;
+  }
+  
+  .case-study-section {
+    @apply py-20;
+  }
+  
+  .case-study-content {
+    @apply max-w-3xl mx-auto prose prose-lg prose-gray;
+  }
+  
+  .stats-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8 my-12;
+  }
+  
+  .stat-card {
+    @apply bg-white p-6 rounded-xl shadow-sm text-center
+           hover:shadow-lg transition-all duration-300;
+  }
+  
+  .process-step {
+    @apply space-y-6 animate-[fadeIn_1s_ease-out];
+  }
+  
+  /* Image Placeholders with Gradient */
+  .image-placeholder {
+    @apply bg-gradient-to-r from-gray-200 to-gray-300 rounded-xl
+           animate-pulse transition-all duration-300;
+  }
+  
+  /* Interactive Elements */
+  .hover-lift {
+    @apply transition-all duration-300 hover:transform hover:-translate-y-1;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-blue-600;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/80;
   }
 }

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shay Levi - Portfolio</title>
+    <title>Shay Levi - UX Designer & Developer</title>
     <link href="css/output.css" rel="stylesheet">
 </head>
 <body class="antialiased">
     <!-- Header -->
-    <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <header class="fixed w-full glass-effect z-50 border-b border-gray-100">
         <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="/" class="text-xl font-display">Shay Levi</a>
+            <a href="/" class="text-xl font-display hover-lift">Shay Levi</a>
             <div class="space-x-8">
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#about" class="nav-link">About</a>
@@ -20,74 +20,137 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 md:pt-40 md:pb-28">
+    <section class="min-h-screen flex items-center pt-16 bg-gradient-to-b from-gray-50 to-white">
         <div class="container-custom">
-            <h1 class="text-display-xl font-display text-center max-w-4xl mx-auto leading-tight mb-8">
-                UX Designer & Developer Creating Meaningful Digital Experiences
-            </h1>
-            <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
-                Passionate about crafting intuitive and innovative solutions that enhance people's lives
-            </p>
-            <div class="flex justify-center">
-                <a href="#projects" class="btn-primary">View Projects</a>
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="hero-title mb-6">
+                    Creating Meaningful Digital Experiences
+                </h1>
+                <p class="hero-description mb-12">
+                    UX Designer & Developer passionate about crafting intuitive and innovative solutions 
+                    that enhance people's lives through technology.
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#about" class="btn-primary bg-gray-900">About Me</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <section id="projects" class="py-32 bg-gray-50">
         <div class="container-custom">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="section-title animate-fade-in">Featured Projects</h2>
+            <div class="project-grid">
                 <!-- iPlant Project -->
-                <a href="projects/iplant.html" class="project-card group">
-                    <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
-                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">iPlant</h3>
-                    <p class="text-gray-600">Smart plant monitoring system for optimal growth</p>
+                <a href="projects/iplant.html" class="project-card group animate-fade-in">
+                    <div class="project-image group-hover:shadow-lg">
+                        <div class="w-full h-full bg-gradient-to-r from-accent to-accent-light opacity-90 
+                                  group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="project-title group-hover:text-accent">iPlant</h3>
+                    <p class="text-gray-600">Smart IoT greenhouse management system with AI-powered automation</p>
+                    <div class="flex space-x-4 mt-4">
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">IoT</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">AI</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Dashboard</span>
+                    </div>
                 </a>
+
                 <!-- Careery Project -->
-                <a href="projects/careery.html" class="project-card group">
-                    <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
-                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">Careery</h3>
-                    <p class="text-gray-600">AI-powered career development platform</p>
+                <a href="projects/careery.html" class="project-card group animate-fade-in [animation-delay:200ms]">
+                    <div class="project-image group-hover:shadow-lg">
+                        <div class="w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-90 
+                                  group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="project-title group-hover:text-blue-500">Careery</h3>
+                    <p class="text-gray-600">AI-powered career development platform for personalized guidance</p>
+                    <div class="flex space-x-4 mt-4">
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">AI</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Mobile</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">UX Research</span>
+                    </div>
                 </a>
+
                 <!-- Eye Tracking Project -->
-                <a href="projects/eye-tracking.html" class="project-card group">
-                    <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
-                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">Eye Tracking Research</h3>
-                    <p class="text-gray-600">Advanced eye tracking solutions for research</p>
+                <a href="projects/eye-tracking.html" class="project-card group animate-fade-in [animation-delay:400ms]">
+                    <div class="project-image group-hover:shadow-lg">
+                        <div class="w-full h-full bg-gradient-to-r from-green-500 to-teal-500 opacity-90 
+                                  group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="project-title group-hover:text-green-500">Eye Tracking Research</h3>
+                    <p class="text-gray-600">Advanced eye tracking solutions for research and accessibility</p>
+                    <div class="flex space-x-4 mt-4">
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Research</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">ML</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Hardware</span>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20">
+    <section id="about" class="py-32">
         <div class="container-custom">
-            <h2 class="section-title">About Me</h2>
-            <div class="max-w-3xl mx-auto text-lg text-gray-600 space-y-6">
-                <p>
-                    I'm a UX designer and developer with a passion for creating meaningful digital experiences. 
-                    My work focuses on the intersection of design and technology, always striving to create 
-                    solutions that are both beautiful and functional.
-                </p>
-                <p>
-                    With experience in both design and development, I bring a unique perspective to every project, 
-                    ensuring that the end result not only looks great but also works flawlessly.
-                </p>
+            <div class="max-w-4xl mx-auto">
+                <h2 class="section-title animate-fade-in">About Me</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="animate-fade-in [animation-delay:200ms]">
+                        <div class="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
+                            <!-- Profile image placeholder -->
+                            <div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300"></div>
+                        </div>
+                    </div>
+                    <div class="space-y-6 animate-fade-in [animation-delay:400ms]">
+                        <p class="text-lg text-gray-600">
+                            As a UX Designer and Developer, I bridge the gap between design and technology, 
+                            creating solutions that are both beautiful and functional. My background in both 
+                            fields allows me to approach problems holistically.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            I specialize in creating intuitive interfaces and developing innovative solutions 
+                            that make technology more accessible and enjoyable for everyone.
+                        </p>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-display">Skills</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-gray-100 rounded-full">UX Design</span>
+                                <span class="px-4 py-2 bg-gray-100 rounded-full">UI Development</span>
+                                <span class="px-4 py-2 bg-gray-100 rounded-full">User Research</span>
+                                <span class="px-4 py-2 bg-gray-100 rounded-full">Prototyping</span>
+                                <span class="px-4 py-2 bg-gray-100 rounded-full">Frontend Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact CTA -->
+    <section class="py-32 bg-gray-50">
+        <div class="container-custom text-center">
+            <h2 class="text-display font-display mb-6 animate-fade-in">Let's Work Together</h2>
+            <p class="text-xl text-gray-600 mb-12 animate-fade-in [animation-delay:200ms]">
+                Have a project in mind? Let's create something amazing.
+            </p>
+            <a href="contact.html" class="btn-primary animate-fade-in [animation-delay:400ms]">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-gray-50 py-12">
+    <footer class="bg-white py-12 border-t border-gray-100">
         <div class="container-custom">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-600 mb-4 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
                 <div class="space-x-8">
-                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black">GitHub</a>
-                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black">LinkedIn</a>
-                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black">Email</a>
+                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black transition-colors">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black transition-colors">Email</a>
                 </div>
             </div>
         </div>
