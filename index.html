@@ -3,101 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shay Levi - UX Designer</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Shay Levi - Portfolio</title>
+    <link href="css/output.css" rel="stylesheet">
 </head>
-<body>
-    <header class="global-header">
-        <div class="container header-content">
-            <a href="index.html" class="logo">Shay Levi</a>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Work</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="#" class="button">Get My CV</a>
-            </nav>
-        </div>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <nav class="container-custom h-16 flex items-center justify-between">
+            <a href="/" class="text-xl font-display">Shay Levi</a>
+            <div class="space-x-8">
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <div class="container">
-            <section class="hero">
-                <h1>I design digital products combining a user-centered approach, aligned with a solid product strategy.</h1>
-            </section>
-
-            <section class="projects">
-                <div class="project-grid">
-                    <article class="project-card">
-                        <a href="projects/iplant.html" class="project-link-wrapper">
-                            <div class="project-image">
-                                <img src="images/projects/iplant/dashboard.jpg" alt="iPlant Dashboard Interface">
-                            </div>
-                            <div class="project-content">
-                                <div class="project-tags">
-                                    <span class="project-tag">Dashboard</span>
-                                    <span class="project-tag">Internet of Things</span>
-                                    <span class="project-tag">Agriculture</span>
-                                    <span class="project-tag">Complex System</span>
-                                </div>
-                                <h3>iPlant, Smart IoT Greenhouse</h3>
-                                <p>Advanced IoT greenhouse management system using AI to automate and optimize plant care. Real-time monitoring and control of environmental conditions for efficient farming.</p>
-                                <span class="project-link">View Case Study →</span>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="images/careery-app.jpg" alt="Careery App Interface">
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span class="project-tag">Mobile App</span>
-                                <span class="project-tag">Research</span>
-                            </div>
-                            <h3>Careery: Career Path Finder</h3>
-                            <p>A mobile application for navigating and comparing between different career paths. Say goodbye to confusion, and hello to clarity.</p>
-                            <a href="#" class="project-link">View Case Study →</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="images/eye-tracking.jpg" alt="Eye Tracking Research">
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span class="project-tag">Research</span>
-                                <span class="project-tag">E-commerce</span>
-                            </div>
-                            <h3>Eye Tracking Research</h3>
-                            <p>How do online shoppers choose their products? Advanced research comparing product ratings to feedback in purchase decisions.</p>
-                            <a href="#" class="project-link">View Case Study →</a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </div>
-
-        <section class="about-section">
-            <div class="container">
-                <div class="about-content">
-                    <h2>Hey, I'm Shay</h2>
-                    <p>A UX designer based in Tel Aviv, passionate about creating intuitive and impactful digital experiences. I combine user-centered design principles with strategic thinking to solve complex problems.</p>
-                    <a href="about.html" class="button">More About Me</a>
-                </div>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28">
+        <div class="container-custom">
+            <h1 class="text-display-xl font-display text-center max-w-4xl mx-auto leading-tight mb-8">
+                UX Designer & Developer Creating Meaningful Digital Experiences
+            </h1>
+            <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+                Passionate about crafting intuitive and innovative solutions that enhance people's lives
+            </p>
+            <div class="flex justify-center">
+                <a href="#projects" class="btn-primary">View Projects</a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="global-footer">
-        <div class="container footer-content">
-            <p>&copy; 2024 Shay Levi. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="mailto:levishay92@gmail.com">Email</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-                <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container-custom">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- iPlant Project -->
+                <a href="projects/iplant.html" class="project-card group">
+                    <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
+                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">iPlant</h3>
+                    <p class="text-gray-600">Smart plant monitoring system for optimal growth</p>
+                </a>
+                <!-- Careery Project -->
+                <a href="projects/careery.html" class="project-card group">
+                    <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
+                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">Careery</h3>
+                    <p class="text-gray-600">AI-powered career development platform</p>
+                </a>
+                <!-- Eye Tracking Project -->
+                <a href="projects/eye-tracking.html" class="project-card group">
+                    <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
+                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">Eye Tracking Research</h3>
+                    <p class="text-gray-600">Advanced eye tracking solutions for research</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container-custom">
+            <h2 class="section-title">About Me</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-600 space-y-6">
+                <p>
+                    I'm a UX designer and developer with a passion for creating meaningful digital experiences. 
+                    My work focuses on the intersection of design and technology, always striving to create 
+                    solutions that are both beautiful and functional.
+                </p>
+                <p>
+                    With experience in both design and development, I bring a unique perspective to every project, 
+                    ensuring that the end result not only looks great but also works flawlessly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 mb-4 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
+                <div class="space-x-8">
+                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black">Email</a>
+                </div>
             </div>
         </div>
     </footer>
