@@ -1077,3 +1077,137 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Apple-style CSS Variables */
+:root {
+  --apple-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  --apple-gray: #86868b;
+  --apple-blue: #0066cc;
+  --apple-black: #1d1d1f;
+  --apple-white: #f5f5f7;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--apple-font);
+  color: var(--apple-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation */
+.site-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: var(--apple-gray);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--apple-black);
+}
+
+/* Hero Section */
+.hero-section {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background: var(--apple-white);
+}
+
+.hero-title {
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--apple-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--apple-blue);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 980px;
+  font-size: 17px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0077ed;
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  color: var(--apple-blue);
+  padding: 12px 24px;
+  border-radius: 980px;
+  font-size: 17px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 102, 204, 0.1);
+}
+
+/* Project Cards */
+.project-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  aspect-ratio: 16/9;
+  background: var(--apple-white);
+}
+
+.project-content {
+  padding: 24px;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.project-description {
+  color: var(--apple-gray);
+  margin-bottom: 16px;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--apple-white);
+  border-radius: 980px;
+  font-size: 13px;
+  margin-right: 8px;
+  color: var(--apple-gray);
+}
