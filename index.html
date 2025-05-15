@@ -1,75 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shay Levi - UX/UI Designer & Developer</title>
+    <title>שי לוי - מפתח ומעצב UX/UI</title>
     <link href="css/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .fade-in {
-            animation: fadeIn 0.8s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </head>
-<body class="antialiased font-inter text-lg">
+<body class="font-inter text-primary bg-light">
     <!-- Header -->
-    <header class="fixed w-full bg-white/80 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
-        <nav class="container mx-auto px-16 h-24 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-semibold text-[#1A1F36] hover:opacity-80 transition-opacity">
-                Shay Levi
+    <header class="header">
+        <nav class="container h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-primary hover:text-accent transition-colors">
+                שי לוי
             </a>
-            <div class="space-x-12 text-lg font-medium">
-                <a href="#home" class="text-[#1A1F36] hover:text-[#4B5563] transition-colors">Home</a>
-                <a href="#projects" class="text-[#1A1F36] hover:text-[#4B5563] transition-colors">Projects</a>
-                <a href="#about" class="text-[#1A1F36] hover:text-[#4B5563] transition-colors">About</a>
-                <a href="contact.html" class="text-[#1A1F36] hover:text-[#4B5563] transition-colors">Contact</a>
+            <div class="flex gap-8">
+                <a href="#home" class="nav-link">בית</a>
+                <a href="#projects" class="nav-link">פרויקטים</a>
+                <a href="#about" class="nav-link">אודות</a>
+                <a href="contact.html" class="nav-link">צור קשר</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-[#F7F8FA] px-4">
-        <div class="container mx-auto px-4 md:px-16 text-center fade-in">
-            <h1 class="text-5xl md:text-6xl font-bold text-[#1A1F36] leading-tight mb-8 max-w-4xl mx-auto">
-                Creating Meaningful Digital Experiences
-            </h1>
-            <p class="text-xl md:text-2xl text-[#4B5563] max-w-3xl mx-auto mb-16 leading-relaxed">
-                UX/UI Designer & Developer passionate about crafting intuitive and innovative solutions that enhance people's lives through technology.
-            </p>
-            <a href="#projects" 
-               class="inline-block bg-[#1A1F36] text-white px-8 py-4 rounded-full text-lg font-medium 
-                      hover:bg-[#2A2F46] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                View Projects
-            </a>
+    <section id="home" class="min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-light to-white">
+        <div class="container text-center fade-in">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <h1 class="text-5xl md:text-6xl font-bold text-primary leading-tight">
+                    יוצר חוויות דיגיטליות משמעותיות
+                </h1>
+                <p class="text-xl text-secondary max-w-2xl mx-auto">
+                    מפתח ומעצב UX/UI המתמחה ביצירת פתרונות חדשניים ואינטואיטיביים שמשפרים את חיי המשתמשים דרך טכנולוגיה.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="#projects" class="btn btn-primary">צפה בפרויקטים</a>
+                    <a href="contact.html" class="btn btn-outline">צור קשר</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-32 bg-white">
-        <div class="container mx-auto px-4 md:px-16">
-            <h2 class="text-4xl font-bold text-[#1A1F36] text-center mb-16">Featured Work</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section id="projects" class="section bg-white">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-16">עבודות נבחרות</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- iPlant Project -->
                 <a href="projects/iplant.html" class="group">
-                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                        <div class="aspect-video bg-[#F7F8FA] relative overflow-hidden">
-                            <img src="images/iplant-preview.jpg" alt="iPlant Project Preview" 
-                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&h=600" 
+                                 alt="iPlant Project Preview">
                         </div>
                         <div class="p-8">
-                            <h3 class="text-2xl font-semibold text-[#1A1F36] mb-3">iPlant</h3>
-                            <p class="text-lg text-[#6B7280] mb-4">
-                                Smart plant monitoring system using IoT and ML for optimal plant care
+                            <h3 class="text-2xl font-semibold mb-3">iPlant</h3>
+                            <p class="text-secondary mb-4">
+                                מערכת חכמה לניטור צמחים המשלבת IoT ו-ML לטיפול מיטבי בצמחים
                             </p>
-                            <span class="text-[#1A1F36] font-medium inline-flex items-center">
-                                View Case Study
-                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            <span class="text-primary font-medium inline-flex items-center group-hover:text-accent transition-colors">
+                                צפה בפרויקט
+                                <svg class="w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
                                 </svg>
                             </span>
                         </div>
@@ -78,20 +70,20 @@
 
                 <!-- Careery Project -->
                 <a href="projects/careery.html" class="group">
-                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                        <div class="aspect-video bg-[#F7F8FA] relative overflow-hidden">
-                            <img src="images/careery-preview.jpg" alt="Careery Project Preview" 
-                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&h=600" 
+                                 alt="Careery Project Preview">
                         </div>
                         <div class="p-8">
-                            <h3 class="text-2xl font-semibold text-[#1A1F36] mb-3">Careery</h3>
-                            <p class="text-lg text-[#6B7280] mb-4">
-                                AI-powered career development platform for personalized guidance
+                            <h3 class="text-2xl font-semibold mb-3">Careery</h3>
+                            <p class="text-secondary mb-4">
+                                פלטפורמה מבוססת AI לפיתוח קריירה והכוונה אישית
                             </p>
-                            <span class="text-[#1A1F36] font-medium inline-flex items-center">
-                                View Case Study
-                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            <span class="text-primary font-medium inline-flex items-center group-hover:text-accent transition-colors">
+                                צפה בפרויקט
+                                <svg class="w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
                                 </svg>
                             </span>
                         </div>
@@ -102,29 +94,28 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 bg-[#F7F8FA]">
-        <div class="container mx-auto px-4 md:px-16">
+    <section id="about" class="section bg-light">
+        <div class="container">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold text-[#1A1F36] mb-16">About Me</h2>
+                <h2 class="text-4xl font-bold mb-16">אודות</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                    <div class="aspect-square bg-[#E5E7EB] rounded-2xl overflow-hidden">
-                        <img src="images/profile.jpg" alt="Shay Levi" class="w-full h-full object-cover">
+                    <div class="aspect-square rounded-2xl overflow-hidden shadow-custom">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400" 
+                             alt="שי לוי" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-6">
-                        <p class="text-xl text-[#4B5563] leading-relaxed">
-                            As a UX/UI Designer and Developer, I bridge the gap between design thinking and technical implementation. 
-                            My approach combines user-centered design principles with modern development practices to create 
-                            seamless digital experiences.
+                        <p class="text-xl text-secondary leading-relaxed">
+                            כמפתח ומעצב UX/UI, אני מגשר בין חשיבה עיצובית ליישום טכני. 
+                            הגישה שלי משלבת עקרונות של עיצוב ממוקד משתמש עם שיטות פיתוח מודרניות 
+                            ליצירת חוויות דיגיטליות חלקות.
                         </p>
-                        <p class="text-xl text-[#4B5563] leading-relaxed">
-                            With expertise in both front-end development and user experience design, I specialize in crafting 
-                            intuitive interfaces that not only look beautiful but also solve real user problems effectively.
+                        <p class="text-xl text-secondary leading-relaxed">
+                            עם מומחיות בפיתוח צד לקוח ועיצוב חווית משתמש, אני מתמחה ביצירת 
+                            ממשקים אינטואיטיביים שלא רק נראים יפה אלא גם פותרים בעיות אמיתיות של משתמשים.
                         </p>
                         <div class="pt-8">
-                            <a href="contact.html" 
-                               class="inline-block bg-[#1A1F36] text-white px-8 py-4 rounded-full text-lg font-medium 
-                                      hover:bg-[#2A2F46] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                                Get in Touch
+                            <a href="contact.html" class="btn btn-primary">
+                                בואו נדבר
                             </a>
                         </div>
                     </div>
@@ -134,15 +125,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#1A1F36] text-white py-16">
-        <div class="container mx-auto px-4 md:px-16 text-center">
-            <h2 class="text-3xl font-bold mb-8">Let's Create Something Amazing</h2>
-            <div class="space-x-8 mb-12">
-                <a href="https://github.com/shaylevi92" class="text-lg hover:text-gray-300 transition-colors">GitHub</a>
-                <a href="https://linkedin.com/in/shaylevi92" class="text-lg hover:text-gray-300 transition-colors">LinkedIn</a>
-                <a href="mailto:contact@shaylevi.com" class="text-lg hover:text-gray-300 transition-colors">Email</a>
+    <footer class="bg-primary text-white py-16">
+        <div class="container text-center">
+            <h2 class="text-3xl font-bold mb-8">בואו ניצור משהו מדהים</h2>
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="https://github.com/shaylevi92" class="text-lg hover:text-accent transition-colors">GitHub</a>
+                <a href="https://linkedin.com/in/shaylevi92" class="text-lg hover:text-accent transition-colors">LinkedIn</a>
+                <a href="mailto:contact@shaylevi.com" class="text-lg hover:text-accent transition-colors">דוא"ל</a>
             </div>
-            <p class="text-gray-400">&copy; 2024 Shay Levi. All rights reserved.</p>
+            <p class="text-secondary-light">&copy; 2024 שי לוי. כל הזכויות שמורות.</p>
         </div>
     </footer>
 
@@ -150,11 +141,7 @@
         // Add shadow to header on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 0) {
-                header.classList.add('shadow-md');
-            } else {
-                header.classList.remove('shadow-md');
-            }
+            header.classList.toggle('shadow-custom', window.scrollY > 0);
         });
 
         // Fade in elements on scroll
@@ -167,12 +154,12 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('section > div').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
     </script>
 </body>
 </html> 
