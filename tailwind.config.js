@@ -1,21 +1,33 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./**/*.html",
-  ],
+  content: ["./*.{html,js}"],
   theme: {
     extend: {
+      colors: {
+        primary: '#1A1F36',
+        secondary: '#4A5568',
+        accent: '#3B82F6',
+        light: '#F7FAFC',
+        dark: '#1A202C'
+      },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
       },
+      boxShadow: {
+        'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        }
+      },
       fontSize: {
         'display-xl': ['3.5rem', { lineHeight: '1.2' }],
-      },
-      colors: {
-        accent: {
-          DEFAULT: '#1A1F36',
-          dark: '#2A2F46',
-        },
       },
       container: {
         center: true,
@@ -34,13 +46,6 @@ module.exports = {
       borderRadius: {
         'xl': '1rem',
         '2xl': '1.5rem',
-      },
-      boxShadow: {
-        'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'DEFAULT': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',
-        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
-        'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',
-        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
       },
     },
   },

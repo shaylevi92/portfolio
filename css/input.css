@@ -4,37 +4,49 @@
 
 @layer base {
   html {
-    @apply antialiased;
     scroll-behavior: smooth;
   }
   
   body {
-    @apply font-sans text-base text-secondary bg-white;
-    @apply text-lg text-[#4B5563];
+    @apply font-inter text-primary bg-light;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold tracking-tight text-primary;
-    @apply text-[#1A1F36];
+    @apply font-inter font-bold text-primary;
   }
 }
 
 @layer components {
-  .container {
-    @apply max-w-container mx-auto px-8;
+  .btn {
+    @apply px-6 py-3 rounded-lg transition-all duration-300;
   }
-  
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-opacity-90;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .project-card {
+    @apply bg-white rounded-xl shadow-custom hover:shadow-hover transition-all duration-300 overflow-hidden;
+  }
+
+  .nav-link {
+    @apply text-primary hover:text-accent transition-colors duration-200;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
   .header {
     @apply sticky top-0 bg-white/85 backdrop-blur-xl border-b border-gray-200 z-50;
-  }
-  
-  .nav-link {
-    @apply text-base text-secondary hover:text-primary transition-colors duration-300 px-4 py-2 rounded-md hover:bg-gray-50;
-    @apply text-lg font-medium text-[#1A1F36] hover:text-[#4B5563] transition-colors;
-  }
-  
-  .project-card {
-    @apply bg-gray-50 rounded-lg p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl border border-gray-200 hover:border-gray-300;
   }
   
   .placeholder-image {
@@ -50,29 +62,43 @@
   }
   
   .section-title {
-    @apply text-3xl mb-lg tracking-tight;
+    @apply text-4xl font-bold text-[#1A1F36] mb-16;
   }
   
   .section-description {
-    @apply text-lg text-secondary max-w-2xl mx-auto;
+    @apply text-xl text-[#4B5563] max-w-3xl mx-auto mb-16 leading-relaxed;
   }
 
   .container-custom {
     @apply container mx-auto px-4 md:px-16;
   }
 
-  .btn-primary {
-    @apply inline-block bg-[#1A1F36] text-white px-8 py-4 rounded-full text-lg font-medium 
-           hover:bg-[#2A2F46] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300;
-  }
-
   .glass-effect {
     @apply bg-white/80 backdrop-blur-sm;
+  }
+
+  .project-image {
+    @apply aspect-video bg-[#F7F8FA] relative overflow-hidden;
+  }
+
+  .project-image img {
+    @apply w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500;
   }
 }
 
 @layer utilities {
   .hover-lift {
     @apply transform transition-transform hover:-translate-y-0.5;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

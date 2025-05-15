@@ -1,28 +1,60 @@
-# Shay Levi - Portfolio Website
+# פורטפוליו אישי
 
-This is my personal portfolio website showcasing my projects and skills in web development, IoT, and machine learning.
+אתר פורטפוליו מודרני הבנוי עם HTML, Tailwind CSS ו-JavaScript.
 
-## Project Structure
+## מבנה הפרויקט
 
 ```
 portfolio/
+├── index.html          # דף הבית
+├── contact.html        # דף יצירת קשר
+├── careery.html        # דף פרויקט Careery
 ├── css/
-│   ├── input.css    # Tailwind CSS source
-│   └── output.css   # Compiled CSS
-├── projects/
-│   ├── iplant.html  # iPlant project page
-│   └── careery.html # Careery project page
-├── index.html       # Home page
-├── contact.html     # Contact page
-└── tailwind.config.js
+│   ├── input.css      # קובץ CSS מקור
+│   └── output.css     # קובץ CSS מקומפל
+├── images/            # תיקיית תמונות
+├── tailwind.config.js # הגדרות Tailwind
+└── package.json       # תלויות הפרויקט
 ```
 
-## Technologies Used
+## התקנה
+
+1. התקן את תלויות הפרויקט:
+```bash
+npm install
+```
+
+2. הפעל את Tailwind בmode פיתוח:
+```bash
+npm run dev
+```
+
+3. בנה את הפרויקט לproduction:
+```bash
+npm run build
+```
+
+## תכונות
+
+- עיצוב מודרני ומינימליסטי
+- רספונסיביות מלאה
+- אנימציות חלקות
+- אופטימיזציה לSEO
+- טעינה מהירה
+- תאימות לכל הדפדפנים
+
+## טכנולוגיות
 
 - HTML5
 - Tailwind CSS
-- JavaScript (coming soon)
-- GitHub Pages for hosting
+- JavaScript
+- Inter Font
+- Heroicons
+
+## דרישות מערכת
+
+- Node.js 14.0.0 ומעלה
+- npm 6.0.0 ומעלה
 
 ## Local Development
 
