@@ -3,71 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shay Levi - Portfolio</title>
+    <title>Shay Levi - UX/UI Designer & Developer</title>
     <link href="css/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased font-inter text-lg">
     <!-- Header -->
-    <header class="fixed w-full glass-effect z-50 border-b border-gray-100">
-        <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-display hover-lift">Shay Levi</a>
-            <div class="space-x-8">
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+    <header class="fixed w-full bg-white/80 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <nav class="container mx-auto px-16 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-semibold text-[#1A1F36] hover:opacity-80 transition-opacity">
+                Shay Levi
+            </a>
+            <div class="space-x-12 text-lg font-medium">
+                <a href="#home" class="text-[#1A1F36] hover:text-[#4B5563] transition-colors">Home</a>
+                <a href="#projects" class="text-[#1A1F36] hover:text-[#4B5563] transition-colors">Projects</a>
+                <a href="#about" class="text-[#1A1F36] hover:text-[#4B5563] transition-colors">About</a>
+                <a href="contact.html" class="text-[#1A1F36] hover:text-[#4B5563] transition-colors">Contact</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20">
-        <div class="container-custom">
-            <h1 class="text-display-xl font-display text-center max-w-4xl mx-auto leading-tight mb-8">
-                UX Designers
+    <section id="home" class="min-h-screen flex items-center justify-center bg-[#F7F8FA] px-4">
+        <div class="container mx-auto px-4 md:px-16 text-center fade-in">
+            <h1 class="text-5xl md:text-6xl font-bold text-[#1A1F36] leading-tight mb-8 max-w-4xl mx-auto">
+                Creating Meaningful Digital Experiences
             </h1>
-            <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto">
-                Building innovative solutions that bridge the digital and physical worlds
+            <p class="text-xl md:text-2xl text-[#4B5563] max-w-3xl mx-auto mb-16 leading-relaxed">
+                UX/UI Designer & Developer passionate about crafting intuitive and innovative solutions that enhance people's lives through technology.
             </p>
+            <a href="#projects" 
+               class="inline-block bg-[#1A1F36] text-white px-8 py-4 rounded-full text-lg font-medium 
+                      hover:bg-[#2A2F46] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                View Projects
+            </a>
         </div>
     </section>
-
-
-    <section class="pt-32 pb-20">
-        <div class="container-custom">
-            <h1 class="text-display-xl font-display text-center max-w-4xl mx-auto leading-tight mb-8">
-                Careery: AI-Powered Career Development Platform
-            </h1>
-            <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
-                Empowering career growth through personalized AI guidance and skill development
-            </p>
-            <!-- Project Image Placeholder -->
-            <div class="aspect-video bg-gray-200 rounded-2xl max-w-5xl mx-auto"></div>
-        </div>
-    </section>
-
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="container-custom">
-            <h2 class="text-3xl font-display mb-12 text-center">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section id="projects" class="py-32 bg-white">
+        <div class="container mx-auto px-4 md:px-16">
+            <h2 class="text-4xl font-bold text-[#1A1F36] text-center mb-16">Featured Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- iPlant Project -->
                 <a href="projects/iplant.html" class="group">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                        <div class="aspect-video bg-gray-200"></div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-display mb-2 group-hover:text-accent">iPlant</h3>
-                            <p class="text-gray-600">Smart plant monitoring system using IoT and ML</p>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="aspect-video bg-[#F7F8FA] relative overflow-hidden">
+                            <img src="images/iplant-preview.jpg" alt="iPlant Project Preview" 
+                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold text-[#1A1F36] mb-3">iPlant</h3>
+                            <p class="text-lg text-[#6B7280] mb-4">
+                                Smart plant monitoring system using IoT and ML for optimal plant care
+                            </p>
+                            <span class="text-[#1A1F36] font-medium inline-flex items-center">
+                                View Case Study
+                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </span>
                         </div>
                     </div>
                 </a>
+
                 <!-- Careery Project -->
                 <a href="projects/careery.html" class="group">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                        <div class="aspect-video bg-gray-200"></div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-display mb-2 group-hover:text-accent">Careery</h3>
-                            <p class="text-gray-600">AI-powered career development platform</p>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="aspect-video bg-[#F7F8FA] relative overflow-hidden">
+                            <img src="images/careery-preview.jpg" alt="Careery Project Preview" 
+                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold text-[#1A1F36] mb-3">Careery</h3>
+                            <p class="text-lg text-[#6B7280] mb-4">
+                                AI-powered career development platform for personalized guidance
+                            </p>
+                            <span class="text-[#1A1F36] font-medium inline-flex items-center">
+                                View Case Study
+                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -76,33 +102,77 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="container-custom">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-display mb-8">About Me</h2>
-                <div class="prose prose-lg">
-                    <p class="text-gray-600">
-                        I'm a Full Stack Developer with a passion for creating innovative solutions that solve real-world problems. 
-                        My expertise spans web development, IoT systems, and machine learning applications. I believe in writing 
-                        clean, maintainable code and creating intuitive user experiences.
-                    </p>
+    <section id="about" class="py-32 bg-[#F7F8FA]">
+        <div class="container mx-auto px-4 md:px-16">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-[#1A1F36] mb-16">About Me</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="aspect-square bg-[#E5E7EB] rounded-2xl overflow-hidden">
+                        <img src="images/profile.jpg" alt="Shay Levi" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-xl text-[#4B5563] leading-relaxed">
+                            As a UX/UI Designer and Developer, I bridge the gap between design thinking and technical implementation. 
+                            My approach combines user-centered design principles with modern development practices to create 
+                            seamless digital experiences.
+                        </p>
+                        <p class="text-xl text-[#4B5563] leading-relaxed">
+                            With expertise in both front-end development and user experience design, I specialize in crafting 
+                            intuitive interfaces that not only look beautiful but also solve real user problems effectively.
+                        </p>
+                        <div class="pt-8">
+                            <a href="contact.html" 
+                               class="inline-block bg-[#1A1F36] text-white px-8 py-4 rounded-full text-lg font-medium 
+                                      hover:bg-[#2A2F46] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                                Get in Touch
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-12">
-        <div class="container-custom">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 mb-4 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
-                <div class="space-x-8">
-                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black">GitHub</a>
-                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black">LinkedIn</a>
-                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black">Email</a>
-                </div>
+    <footer class="bg-[#1A1F36] text-white py-16">
+        <div class="container mx-auto px-4 md:px-16 text-center">
+            <h2 class="text-3xl font-bold mb-8">Let's Create Something Amazing</h2>
+            <div class="space-x-8 mb-12">
+                <a href="https://github.com/shaylevi92" class="text-lg hover:text-gray-300 transition-colors">GitHub</a>
+                <a href="https://linkedin.com/in/shaylevi92" class="text-lg hover:text-gray-300 transition-colors">LinkedIn</a>
+                <a href="mailto:contact@shaylevi.com" class="text-lg hover:text-gray-300 transition-colors">Email</a>
             </div>
+            <p class="text-gray-400">&copy; 2024 Shay Levi. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Fade in elements on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html> 

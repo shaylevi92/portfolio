@@ -5,14 +5,17 @@
 @layer base {
   html {
     @apply antialiased;
+    scroll-behavior: smooth;
   }
   
   body {
     @apply font-sans text-base text-secondary bg-white;
+    @apply text-lg text-[#4B5563];
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-semibold tracking-tight text-primary;
+    @apply text-[#1A1F36];
   }
 }
 
@@ -27,6 +30,7 @@
   
   .nav-link {
     @apply text-base text-secondary hover:text-primary transition-colors duration-300 px-4 py-2 rounded-md hover:bg-gray-50;
+    @apply text-lg font-medium text-[#1A1F36] hover:text-[#4B5563] transition-colors;
   }
   
   .project-card {
@@ -51,5 +55,24 @@
   
   .section-description {
     @apply text-lg text-secondary max-w-2xl mx-auto;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 md:px-16;
+  }
+
+  .btn-primary {
+    @apply inline-block bg-[#1A1F36] text-white px-8 py-4 rounded-full text-lg font-medium 
+           hover:bg-[#2A2F46] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm;
+  }
+}
+
+@layer utilities {
+  .hover-lift {
+    @apply transform transition-transform hover:-translate-y-0.5;
   }
 }
