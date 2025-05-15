@@ -1,1 +1,93 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shay Levi - Portfolio</title>
+    <link href="css/output.css" rel="stylesheet">
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="fixed w-full glass-effect z-50 border-b border-gray-100">
+        <nav class="container-custom h-16 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-display hover-lift">Shay Levi</a>
+            <div class="space-x-8">
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20">
+        <div class="container-custom">
+            <h1 class="text-display-xl font-display text-center max-w-4xl mx-auto leading-tight mb-8">
+                Full Stack Developer & IoT Enthusiast
+            </h1>
+            <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto">
+                Building innovative solutions that bridge the digital and physical worlds
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container-custom">
+            <h2 class="text-3xl font-display mb-12 text-center">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- iPlant Project -->
+                <a href="projects/iplant.html" class="group">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="aspect-video bg-gray-200"></div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-display mb-2 group-hover:text-accent">iPlant</h3>
+                            <p class="text-gray-600">Smart plant monitoring system using IoT and ML</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Careery Project -->
+                <a href="projects/careery.html" class="group">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="aspect-video bg-gray-200"></div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-display mb-2 group-hover:text-accent">Careery</h3>
+                            <p class="text-gray-600">AI-powered career development platform</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container-custom">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-display mb-8">About Me</h2>
+                <div class="prose prose-lg">
+                    <p class="text-gray-600">
+                        I'm a Full Stack Developer with a passion for creating innovative solutions that solve real-world problems. 
+                        My expertise spans web development, IoT systems, and machine learning applications. I believe in writing 
+                        clean, maintainable code and creating intuitive user experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 mb-4 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
+                <div class="space-x-8">
+                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
