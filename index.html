@@ -121,7 +121,7 @@
             header.classList.toggle('shadow-sm', window.scrollY > 0);
         });
 
-        // Enhanced hero text animation with precise masking
+        // Simple and precise hero text animation
         document.addEventListener('DOMContentLoaded', () => {
             const heroTitle = document.getElementById('heroTitle');
             const text = heroTitle.textContent.trim();
@@ -130,51 +130,33 @@
             
             text.split('').forEach((char, index) => {
                 const wrapper = document.createElement('div');
-                wrapper.style.display = 'inline-block';
-                wrapper.style.overflow = 'hidden';
-                wrapper.style.verticalAlign = 'top';
-                wrapper.style.height = '1.2em';
-                wrapper.style.position = 'relative';
+                wrapper.style.cssText = `
+                    display: inline-block;
+                    overflow: hidden;
+                    vertical-align: top;
+                `;
                 
                 const span = document.createElement('span');
                 span.textContent = char === ' ' ? '\u00A0' : char;
-                span.style.display = 'inline-block';
-                span.style.transform = 'translateY(100%)';
-                span.style.opacity = '0';
-                span.style.position = 'relative';
-                
-                span.style.transition = `
-                    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                    opacity 0.3s ease-in-out
+                span.style.cssText = `
+                    display: inline-block;
+                    transform: translateY(100%);
+                    opacity: 0;
+                    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+                    transition-delay: ${index * 50}ms;
                 `;
-                span.style.transitionDelay = `${index * 60}ms`;
                 
                 wrapper.appendChild(span);
                 heroTitle.appendChild(wrapper);
                 
-                setTimeout(() => {
-                    span.style.transform = 'translateY(0)';
-                    span.style.opacity = '1';
-                }, 100);
-
-                span.addEventListener('mouseover', () => {
-                    span.style.transform = 'translateY(-2px)';
-                    span.style.transition = 'transform 0.2s ease';
-                });
-                
-                span.addEventListener('mouseout', () => {
-                    span.style.transform = 'translateY(0)';
+                // Trigger the animation after a brief delay
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        span.style.transform = 'translateY(0)';
+                        span.style.opacity = '1';
+                    });
                 });
             });
-
-            const totalDuration = text.length * 60 + 600;
-            setTimeout(() => {
-                const allSpans = heroTitle.querySelectorAll('span');
-                allSpans.forEach((span, i) => {
-                    span.style.transition = 'transform 0.3s ease';
-                    span.style.transformOrigin = 'center';
-                });
-            }, totalDuration);
         });
     </script>
 </body>
