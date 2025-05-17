@@ -6,29 +6,138 @@
     <title>About - Shay Levi</title>
     <link href="css/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #1A1F36 0%, #4B5563 50%, #1A1F36 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 8s linear infinite;
+        }
+        
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        .card-gradient {
+            background: linear-gradient(210deg, rgba(26,31,54,0.02) 0%, rgba(75,85,99,0.02) 100%);
+        }
+        
+        .experience-card {
+            transition: all 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(26, 31, 54, 0.12);
+        }
+        
+        .education-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1A1F36, #4B5563);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .education-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .button-hover {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .button-hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(110deg, 
+                rgba(255,255,255,0) 0%, 
+                rgba(255,255,255,0.1) 50%, 
+                rgba(255,255,255,0) 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .button-hover:hover::after {
+            transform: translateX(0);
+        }
+        
+        .profile-image {
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.4, 1);
+        }
+        
+        .profile-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid #1A1F36;
+            border-radius: inherit;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: all 0.6s cubic-bezier(0.2, 0.7, 0.4, 1);
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .profile-image:hover::after {
+            transform: scale(1);
+            opacity: 0.1;
+        }
+        
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s cubic-bezier(0.2, 0.7, 0.4, 1);
+        }
+        
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body class="font-inter text-primary bg-light">
+<body class="antialiased bg-background font-inter">
     <!-- Header -->
-    <header class="header">
-        <nav class="container h-20 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-primary hover:text-accent transition-colors">
-                Shay Levi
-            </a>
-            <div class="flex gap-8">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#projects" class="nav-link">Projects</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+    <header class="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-primary/10">
+        <nav class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/portfolio" class="text-xl font-semibold text-primary hover:text-primary/80 transition-colors">Shay Levi</a>
+            <div class="space-x-8">
+                <a href="/portfolio/#projects" class="text-secondary hover:text-primary transition-colors">Projects</a>
+                <a href="/portfolio/#about" class="text-secondary hover:text-primary transition-colors">About</a>
+                <a href="/portfolio/contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="py-24 bg-gradient-to-br from-light to-white">
-        <div class="container">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-5xl font-bold mb-6">About Me</h1>
-                <p class="text-xl text-secondary">
+    <section class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center opacity-0 transform translate-y-4" id="heroContent">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    <span class="gradient-text">About Me</span>
+                </h1>
+                <p class="text-xl text-secondary max-w-2xl mx-auto">
                     Passionate about creating meaningful digital experiences through innovative design and development
                 </p>
             </div>
@@ -36,22 +145,22 @@
     </section>
 
     <!-- Story Section -->
-    <section class="section bg-white">
-        <div class="container">
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                    <div class="aspect-square rounded-2xl overflow-hidden shadow-custom">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center opacity-0 transform translate-y-4" id="storyContent">
+                    <div class="aspect-square rounded-2xl overflow-hidden shadow-sm border border-primary/10 profile-image">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400" 
                              alt="Shay Levi" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-6">
-                        <h2 class="text-3xl font-bold mb-6">My Story</h2>
-                        <p class="text-xl text-secondary leading-relaxed">
+                        <h2 class="text-3xl font-bold text-primary mb-6">My Story</h2>
+                        <p class="text-lg text-secondary leading-relaxed">
                             With over 5 years of experience in UX/UI design and development, I've had the privilege of working 
                             with startups and established companies alike, helping them create user-centered digital solutions 
                             that make a real impact.
                         </p>
-                        <p class="text-xl text-secondary leading-relaxed">
+                        <p class="text-lg text-secondary leading-relaxed">
                             My journey began in software development, but I quickly realized my passion for creating not just 
                             functional, but beautiful and intuitive user experiences. This led me to specialize in both design 
                             and development, allowing me to bridge the gap between these two crucial aspects of digital product creation.
@@ -63,15 +172,15 @@
     </section>
 
     <!-- Experience Section -->
-    <section class="section bg-light">
-        <div class="container">
-            <h2 class="text-4xl font-bold text-center mb-16">Experience</h2>
-            <div class="max-w-4xl mx-auto space-y-12">
-                <div class="bg-white p-8 rounded-xl shadow-custom">
+    <section class="py-24 bg-background">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary text-center mb-16">Experience</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-primary/10 opacity-0 transform translate-y-4 experience-card" id="exp1">
                     <div class="flex justify-between items-start mb-4">
                         <div>
-                            <h3 class="text-2xl font-semibold">Senior UX/UI Designer</h3>
-                            <p class="text-accent">TechCorp Inc.</p>
+                            <h3 class="text-2xl font-semibold text-primary">Senior UX/UI Designer</h3>
+                            <p class="text-primary/60">TechCorp Inc.</p>
                         </div>
                         <span class="text-secondary">2021 - Present</span>
                     </div>
@@ -81,11 +190,11 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-custom">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-primary/10 opacity-0 transform translate-y-4 experience-card" id="exp2">
                     <div class="flex justify-between items-start mb-4">
                         <div>
-                            <h3 class="text-2xl font-semibold">Full Stack Developer</h3>
-                            <p class="text-accent">InnovateLab</p>
+                            <h3 class="text-2xl font-semibold text-primary">Full Stack Developer</h3>
+                            <p class="text-primary/60">InnovateLab</p>
                         </div>
                         <span class="text-secondary">2019 - 2021</span>
                     </div>
@@ -95,11 +204,11 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-custom">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-primary/10 opacity-0 transform translate-y-4 experience-card" id="exp3">
                     <div class="flex justify-between items-start mb-4">
                         <div>
-                            <h3 class="text-2xl font-semibold">UX Designer</h3>
-                            <p class="text-accent">DesignStudio</p>
+                            <h3 class="text-2xl font-semibold text-primary">UX Designer</h3>
+                            <p class="text-primary/60">DesignStudio</p>
                         </div>
                         <span class="text-secondary">2018 - 2019</span>
                     </div>
@@ -113,18 +222,18 @@
     </section>
 
     <!-- Education Section -->
-    <section class="section bg-white">
-        <div class="container">
-            <h2 class="text-4xl font-bold text-center mb-16">Education</h2>
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary text-center mb-16">Education</h2>
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-light p-8 rounded-xl">
-                    <h3 class="text-2xl font-semibold mb-2">Master's in Human-Computer Interaction</h3>
-                    <p class="text-accent mb-2">Stanford University</p>
+                <div class="bg-background p-8 rounded-2xl border border-primary/10 opacity-0 transform translate-y-4 education-card" id="edu1">
+                    <h3 class="text-2xl font-semibold text-primary mb-2">Master's in Human-Computer Interaction</h3>
+                    <p class="text-primary/60 mb-2">Stanford University</p>
                     <p class="text-secondary">2017 - 2018</p>
                 </div>
-                <div class="bg-light p-8 rounded-xl">
-                    <h3 class="text-2xl font-semibold mb-2">B.Sc. in Computer Science</h3>
-                    <p class="text-accent mb-2">MIT</p>
+                <div class="bg-background p-8 rounded-2xl border border-primary/10 opacity-0 transform translate-y-4 education-card" id="edu2">
+                    <h3 class="text-2xl font-semibold text-primary mb-2">B.Sc. in Computer Science</h3>
+                    <p class="text-primary/60 mb-2">MIT</p>
                     <p class="text-secondary">2013 - 2017</p>
                 </div>
             </div>
@@ -132,35 +241,89 @@
     </section>
 
     <!-- Contact CTA -->
-    <section class="section bg-gradient-to-br from-primary to-dark text-white">
-        <div class="container text-center">
-            <h2 class="text-4xl font-bold mb-8">Ready to Start Your Project?</h2>
-            <p class="text-xl mb-12 max-w-2xl mx-auto">
+    <section class="py-24 bg-primary">
+        <div class="container mx-auto px-6 text-center opacity-0 transform translate-y-4" id="cta">
+            <h2 class="text-4xl font-bold text-white mb-8">Ready to Start Your Project?</h2>
+            <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
                 Let's work together to create something amazing. I'm always excited to take on new challenges 
                 and help bring innovative ideas to life.
             </p>
-            <a href="contact.html" class="btn bg-white text-primary hover:bg-light">Get in Touch</a>
+            <a href="contact.html" class="inline-flex items-center px-8 py-3 bg-white text-primary rounded-lg hover:bg-white/90 transition-all duration-300 shadow-sm hover:shadow-md button-hover">
+                Get in Touch
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-16">
-        <div class="container text-center">
-            <h2 class="text-3xl font-bold mb-8">Let's Create Something Amazing</h2>
-            <div class="flex justify-center gap-8 mb-12">
-                <a href="https://github.com/shaylevi92" class="text-lg hover:text-accent transition-colors">GitHub</a>
-                <a href="https://linkedin.com/in/shaylevi92" class="text-lg hover:text-accent transition-colors">LinkedIn</a>
-                <a href="mailto:contact@shaylevi.com" class="text-lg hover:text-accent transition-colors">Email</a>
+    <footer class="bg-primary py-16 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/60 mb-6 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
+                <div class="space-x-8">
+                    <a href="https://github.com/shaylevi92" class="text-white/60 hover:text-white transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-white/60 hover:text-white transition-colors">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-white/60 hover:text-white transition-colors">Email</a>
+                </div>
             </div>
-            <p class="text-secondary-light">&copy; 2024 Shay Levi. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Add shadow to header on scroll
+        // Enhanced header shadow and background on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            header.classList.toggle('shadow-custom', window.scrollY > 0);
+            if (window.scrollY > 0) {
+                header.classList.add('shadow-sm');
+                header.style.backgroundColor = 'rgba(247, 248, 250, 0.95)';
+            } else {
+                header.classList.remove('shadow-sm');
+                header.style.backgroundColor = 'rgba(247, 248, 250, 0.8)';
+            }
+        });
+
+        // Enhanced Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Elements to animate
+        const elements = [
+            'heroContent',
+            'storyContent',
+            'exp1',
+            'exp2',
+            'exp3',
+            'edu1',
+            'edu2',
+            'cta'
+        ];
+
+        // Set initial styles and observe elements
+        elements.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.classList.add('scroll-fade');
+                observer.observe(element);
+            }
+        });
+
+        // Add staggered delay to experience and education cards
+        const cards = document.querySelectorAll('.experience-card, .education-card');
+        cards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 100}ms`;
         });
     </script>
 </body>

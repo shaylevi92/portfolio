@@ -5,77 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Shay Levi</title>
     <link href="./css/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #1A1F36 0%, #4B5563 50%, #1A1F36 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 8s linear infinite;
+        }
+        
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        .input-focus-effect {
+            position: relative;
+            isolation: isolate;
+        }
+        
+        .input-focus-effect::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #1A1F36, #4B5563);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .input-focus-effect:focus-within::after {
+            transform: scaleX(1);
+        }
+        
+        .button-hover {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .button-hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(110deg, 
+                rgba(255,255,255,0) 0%, 
+                rgba(255,255,255,0.1) 50%, 
+                rgba(255,255,255,0) 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .button-hover:hover::after {
+            transform: translateX(0);
+        }
+        
+        .social-link {
+            position: relative;
+        }
+        
+        .social-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #1A1F36, #4B5563);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-background font-inter">
     <!-- Header -->
-    <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="/portfolio" class="text-xl font-display hover:text-accent transition-colors">Shay Levi</a>
+    <header class="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-primary/10">
+        <nav class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/portfolio" class="text-xl font-semibold text-primary hover:text-primary/80 transition-colors">Shay Levi</a>
             <div class="space-x-8">
-                <a href="/portfolio/#projects" class="nav-link">Projects</a>
-                <a href="/portfolio/#about" class="nav-link">About</a>
-                <a href="/portfolio/contact.html" class="nav-link">Contact</a>
+                <a href="/portfolio/#projects" class="text-secondary hover:text-primary transition-colors">Projects</a>
+                <a href="/portfolio/#about" class="text-secondary hover:text-primary transition-colors">About</a>
+                <a href="/portfolio/contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a>
             </div>
         </nav>
     </header>
 
     <!-- Contact Section -->
-    <section class="pt-40 md:pt-48 pb-20">
-        <div class="container-custom">
+    <section class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto">
-                <h1 class="hero-title text-center mb-8">
-                    Let's Connect
-                </h1>
-                <p class="hero-description text-center mb-12">
-                    Have a project in mind or just want to chat? I'd love to hear from you.
-                </p>
+                <div class="text-center opacity-0 transform translate-y-4" id="heroContent">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text">Let's Connect</span>
+                    </h1>
+                    <p class="text-xl text-secondary mb-12">
+                        Have a project in mind or just want to chat? I'd love to hear from you.
+                    </p>
+                </div>
 
                 <!-- Contact Form -->
-                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm">
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-primary/10 opacity-0 transform translate-y-4" id="contactForm">
                     <form action="https://formspree.io/f/levishay92@gmail.com" method="POST" class="space-y-8">
                         <div>
-                            <label for="name" class="block text-base font-medium text-gray-700 mb-2">Name</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-3 text-base border-2 border-gray-200 rounded-xl 
-                                       focus:ring-2 focus:ring-accent focus:border-accent transition-colors
-                                       placeholder-gray-400 hover:border-gray-300">
+                            <label for="name" class="block text-base font-medium text-primary mb-2">Name</label>
+                            <div class="input-focus-effect">
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 text-base border border-primary/20 rounded-lg 
+                                           focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-colors
+                                           placeholder-secondary/60 hover:border-primary/30 bg-background">
+                            </div>
                         </div>
                         <div>
-                            <label for="email" class="block text-base font-medium text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-3 text-base border-2 border-gray-200 rounded-xl 
-                                       focus:ring-2 focus:ring-accent focus:border-accent transition-colors
-                                       placeholder-gray-400 hover:border-gray-300">
+                            <label for="email" class="block text-base font-medium text-primary mb-2">Email</label>
+                            <div class="input-focus-effect">
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 text-base border border-primary/20 rounded-lg 
+                                           focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-colors
+                                           placeholder-secondary/60 hover:border-primary/30 bg-background">
+                            </div>
                         </div>
                         <div>
-                            <label for="message" class="block text-base font-medium text-gray-700 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="6" required
-                                class="w-full px-4 py-3 text-base border-2 border-gray-200 rounded-xl 
-                                       focus:ring-2 focus:ring-accent focus:border-accent transition-colors
-                                       placeholder-gray-400 hover:border-gray-300"></textarea>
+                            <label for="message" class="block text-base font-medium text-primary mb-2">Message</label>
+                            <div class="input-focus-effect">
+                                <textarea id="message" name="message" rows="6" required
+                                    class="w-full px-4 py-3 text-base border border-primary/20 rounded-lg 
+                                           focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-colors
+                                           placeholder-secondary/60 hover:border-primary/30 bg-background"></textarea>
+                            </div>
                         </div>
                         <button type="submit"
-                            class="w-full bg-accent text-white py-4 px-8 rounded-xl text-base font-medium
-                                   hover:bg-opacity-90 transition-all transform hover:scale-[1.02]">
+                            class="w-full bg-primary text-white py-4 px-8 rounded-lg text-base font-medium
+                                   hover:bg-primary/90 transition-all transform hover:shadow-md button-hover">
                             Send Message
                         </button>
                     </form>
                 </div>
 
                 <!-- Alternative Contact Methods -->
-                <div class="mt-20 text-center">
-                    <h2 class="text-2xl font-display mb-8">Other Ways to Reach Me</h2>
+                <div class="mt-20 text-center opacity-0 transform translate-y-4" id="altContact">
+                    <h2 class="text-2xl font-bold text-primary mb-8">Other Ways to Reach Me</h2>
                     <div class="flex justify-center space-x-12">
                         <a href="https://github.com/shaylevi92" 
-                           class="text-gray-600 hover:text-black transition-colors flex items-center space-x-2">
+                           class="text-secondary hover:text-primary transition-colors flex items-center space-x-2 social-link">
                             <span class="text-lg">GitHub</span>
                         </a>
                         <a href="https://linkedin.com/in/shaylevi92" 
-                           class="text-gray-600 hover:text-black transition-colors flex items-center space-x-2">
+                           class="text-secondary hover:text-primary transition-colors flex items-center space-x-2 social-link">
                             <span class="text-lg">LinkedIn</span>
                         </a>
                         <a href="mailto:contact@shaylevi.com" 
-                           class="text-gray-600 hover:text-black transition-colors flex items-center space-x-2">
+                           class="text-secondary hover:text-primary transition-colors flex items-center space-x-2 social-link">
                             <span class="text-lg">Email</span>
                         </a>
                     </div>
@@ -85,17 +176,60 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-16">
-        <div class="container-custom">
+    <footer class="bg-primary py-16">
+        <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 mb-6 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
+                <p class="text-white/60 mb-6 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
                 <div class="space-x-8">
-                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black transition-colors">GitHub</a>
-                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black transition-colors">LinkedIn</a>
-                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black transition-colors">Email</a>
+                    <a href="https://github.com/shaylevi92" class="text-white/60 hover:text-white transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-white/60 hover:text-white transition-colors">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-white/60 hover:text-white transition-colors">Email</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Enhanced header shadow and background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.classList.add('shadow-sm');
+                header.style.backgroundColor = 'rgba(247, 248, 250, 0.95)';
+            } else {
+                header.classList.remove('shadow-sm');
+                header.style.backgroundColor = 'rgba(247, 248, 250, 0.8)';
+            }
+        });
+
+        // Enhanced staggered animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = [
+                { id: 'heroContent', delay: 0 },
+                { id: 'contactForm', delay: 300 },
+                { id: 'altContact', delay: 600 }
+            ];
+
+            elements.forEach(({ id, delay }) => {
+                const element = document.getElementById(id);
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    element.style.transition = 'all 1s cubic-bezier(0.2, 0.7, 0.4, 1)';
+                }, delay);
+            });
+            
+            // Add input focus animations
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.closest('.input-focus-effect').classList.add('focused');
+                });
+                input.addEventListener('blur', () => {
+                    input.closest('.input-focus-effect').classList.remove('focused');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -8,13 +8,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .gradient-text {
-            background: linear-gradient(to right, #1A1F36, #4B5563);
+            background: linear-gradient(135deg, #1A1F36 0%, #4B5563 50%, #1A1F36 100%);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: shine 8s linear infinite;
         }
+        
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
         .image-placeholder {
             background: linear-gradient(210deg, rgba(26,31,54,0.02) 0%, rgba(75,85,99,0.02) 100%);
             border: 1px dashed rgba(26,31,54,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-placeholder::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(26,31,54,0.05) 50%,
+                transparent 100%
+            );
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                transform: translate(-30%, -30%) rotate(0deg);
+            }
+            100% {
+                transform: translate(30%, 30%) rotate(360deg);
+            }
+        }
+        
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s cubic-bezier(0.2, 0.7, 0.4, 1);
+        }
+        
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .image-zoom {
+            overflow: hidden;
+        }
+        
+        .image-zoom img {
+            transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.4, 1);
+        }
+        
+        .image-zoom:hover img {
+            transform: scale(1.05);
+        }
+        
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1A1F36, #4B5563);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .button-hover {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .button-hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(110deg, 
+                rgba(255,255,255,0) 0%, 
+                rgba(255,255,255,0.1) 50%, 
+                rgba(255,255,255,0) 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .button-hover:hover::after {
+            transform: translateX(0);
         }
     </style>
 </head>
@@ -26,7 +136,7 @@
             <div class="flex items-center gap-8">
                 <a href="/portfolio/#projects" class="text-secondary hover:text-primary transition-colors">Projects</a>
                 <a href="/portfolio/#about" class="text-secondary hover:text-primary transition-colors">About</a>
-                <a href="/portfolio/contact.html" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">Contact</a>
+                <a href="/portfolio/contact.html" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors button-hover">Contact</a>
             </div>
         </nav>
     </header>
@@ -44,7 +154,7 @@
                         Advanced IoT plant monitoring system for efficient plant care. Provides data on soil, sun, temperature, and food levels with ease.
                     </p>
                 </div>
-                <div class="aspect-[16/9] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                <div class="aspect-[16/9] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10 image-zoom">
                     <img src="../images/iplant/hero.png" alt="iPlant Dashboard Hero" class="w-full h-full object-cover">
                 </div>
             </div>
@@ -75,7 +185,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10 image-zoom">
                     <img src="../images/iplant/overview.png" alt="iPlant System Overview" class="w-full h-full object-cover">
                 </div>
             </div>
@@ -108,10 +218,10 @@
                     </ul>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10 image-zoom">
                         <img src="../images/iplant/research-1.png" alt="User Research Process" class="w-full h-full object-cover">
                     </div>
-                    <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10 image-zoom">
                         <img src="../images/iplant/research-2.png" alt="Research Findings" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -175,10 +285,10 @@
                 </ul>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10 image-zoom">
                     <img src="../images/iplant/final-1.png" alt="Final Dashboard Design" class="w-full h-full object-cover">
                 </div>
-                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10 image-zoom">
                     <img src="../images/iplant/final-2.png" alt="Mobile Interface" class="w-full h-full object-cover">
                 </div>
             </div>
@@ -212,15 +322,15 @@
                         iPlant represents a significant step forward in making professional-grade plant care accessible to everyone. The project successfully combines advanced IoT technology with user-centered design principles to create a solution that is both powerful and easy to use.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
-                        <div class="p-6 bg-primary/5 rounded-2xl">
+                        <div class="p-6 bg-primary/5 rounded-2xl stat-card">
                             <div class="text-3xl font-bold text-primary mb-2">30%</div>
                             <div class="text-secondary">Reduction in Water Usage</div>
                         </div>
-                        <div class="p-6 bg-primary/5 rounded-2xl">
+                        <div class="p-6 bg-primary/5 rounded-2xl stat-card">
                             <div class="text-3xl font-bold text-primary mb-2">85%</div>
                             <div class="text-secondary">User Satisfaction Rate</div>
                         </div>
-                        <div class="p-6 bg-primary/5 rounded-2xl">
+                        <div class="p-6 bg-primary/5 rounded-2xl stat-card">
                             <div class="text-3xl font-bold text-primary mb-2">40%</div>
                             <div class="text-secondary">Increase in Plant Health</div>
                         </div>
@@ -248,34 +358,43 @@
     </footer>
 
     <script>
-        // Add shadow to header on scroll
+        // Enhanced header shadow and background on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            header.classList.toggle('shadow-sm', window.scrollY > 0);
+            if (window.scrollY > 0) {
+                header.classList.add('shadow-sm');
+                header.style.backgroundColor = 'rgba(247, 248, 250, 0.95)';
+            } else {
+                header.classList.remove('shadow-sm');
+                header.style.backgroundColor = 'rgba(247, 248, 250, 0.8)';
+            }
         });
 
-        // Intersection Observer for fade-in animations
+        // Enhanced Intersection Observer for fade-in animations
         const observerOptions = {
             root: null,
-            threshold: 0.1,
+            threshold: 0.2,
             rootMargin: '0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'all 0.8s cubic-bezier(0.2, 0.7, 0.4, 1)';
+        // Add scroll-fade class to sections and observe them
+        document.querySelectorAll('section > div').forEach(section => {
+            section.classList.add('scroll-fade');
             observer.observe(section);
+        });
+
+        // Add staggered delay to stat cards
+        const statCards = document.querySelectorAll('.stat-card');
+        statCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 100}ms`;
         });
     </script>
 </body>
