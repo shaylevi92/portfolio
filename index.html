@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shay Levi - UX/UI Designer & Developer</title>
+    <link href="css/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="antialiased">
@@ -22,7 +23,7 @@
     <!-- Hero Section -->
     <section class="pt-32 pb-20">
         <div class="container-custom">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-3xl mx-auto">
                 <h1 class="text-display-xl font-display text-center leading-tight mb-8 opacity-0" id="heroTitle">
                     UX Designer & Developer Creating Meaningful Digital Experiences
                 </h1>
@@ -39,20 +40,20 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-gray-50">
         <div class="container-custom">
-            <div class="max-w-3xl mx-auto">
+            <div class="max-w-5xl mx-auto">
                 <h2 class="text-3xl font-display text-center mb-16">Featured Projects</h2>
                 <div class="space-y-24">
                     <!-- iPlant Project -->
                     <a href="projects/iplant.html" class="group block">
                         <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-lg transition-all duration-300">
-                            <div class="relative overflow-hidden rounded-2xl mb-8">
+                            <div class="relative overflow-hidden rounded-2xl mb-8 aspect-video">
                                 <img src="images/irrigation_dashboard.png" alt="iPlant Dashboard" 
-                                     class="w-full transform transition-transform duration-500 group-hover:scale-105">
+                                     class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                     <span class="text-white text-lg font-medium">View Project</span>
                                 </div>
                             </div>
-                            <div>
+                            <div class="max-w-3xl">
                                 <h3 class="text-3xl font-display mb-4 group-hover:text-accent transition-colors">iPlant</h3>
                                 <p class="text-lg text-gray-600">Smart plant monitoring system using IoT and ML for optimal plant care and growth tracking</p>
                             </div>
@@ -62,13 +63,13 @@
                     <!-- Careery Project -->
                     <a href="projects/careery.html" class="group block">
                         <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-lg transition-all duration-300">
-                            <div class="relative overflow-hidden rounded-2xl mb-8">
-                                <div class="aspect-video bg-gray-200 transform transition-transform duration-500 group-hover:scale-105"></div>
+                            <div class="relative overflow-hidden rounded-2xl mb-8 aspect-video">
+                                <div class="w-full h-full bg-gray-200 transform transition-transform duration-500 group-hover:scale-105"></div>
                                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                     <span class="text-white text-lg font-medium">View Project</span>
                                 </div>
                             </div>
-                            <div>
+                            <div class="max-w-3xl">
                                 <h3 class="text-3xl font-display mb-4 group-hover:text-accent transition-colors">Careery</h3>
                                 <p class="text-lg text-gray-600">AI-powered career development platform for personalized guidance and skill development</p>
                             </div>
@@ -132,9 +133,10 @@
                 wrapper.style.display = 'inline-block';
                 wrapper.style.overflow = 'hidden';
                 wrapper.style.verticalAlign = 'top';
+                wrapper.style.height = '1.1em';
                 
                 const span = document.createElement('span');
-                span.textContent = char === ' ' ? '\u00A0' : char; // Replace space with non-breaking space
+                span.textContent = char === ' ' ? '\u00A0' : char;
                 span.style.display = 'inline-block';
                 span.style.transform = 'translateY(100%)';
                 span.style.transition = `transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)`;
