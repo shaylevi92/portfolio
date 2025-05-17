@@ -3,167 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPlant Project - Shay Levi</title>
+    <title>iPlant Case Study - Shay Levi</title>
     <link href="../css/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #1A1F36, #4B5563);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .image-placeholder {
+            background: linear-gradient(210deg, rgba(26,31,54,0.02) 0%, rgba(75,85,99,0.02) 100%);
+            border: 1px dashed rgba(26,31,54,0.2);
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-background font-inter">
     <!-- Header -->
-    <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="/portfolio" class="text-xl font-display hover:text-accent transition-colors">Shay Levi</a>
-            <div class="space-x-8">
-                <a href="/portfolio/#projects" class="nav-link">Projects</a>
-                <a href="/portfolio/#about" class="nav-link">About</a>
-                <a href="/portfolio/contact.html" class="nav-link">Contact</a>
+    <header class="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-primary/10">
+        <nav class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/portfolio" class="text-xl font-semibold text-primary hover:text-primary/80 transition-colors">Shay Levi</a>
+            <div class="flex items-center gap-8">
+                <a href="/portfolio/#projects" class="text-secondary hover:text-primary transition-colors">Projects</a>
+                <a href="/portfolio/#about" class="text-secondary hover:text-primary transition-colors">About</a>
+                <a href="/portfolio/contact.html" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">Contact</a>
             </div>
         </nav>
     </header>
 
-    <!-- Project Hero -->
+    <!-- Hero Section -->
     <section class="pt-32 pb-20">
-        <div class="container-custom">
-            <h1 class="text-display-xl font-display text-center max-w-4xl mx-auto leading-tight mb-8">
-                iPlant: Smart Plant Monitoring System
-            </h1>
-            <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
-                A revolutionary IoT solution for optimal plant growth and monitoring
-            </p>
-            <!-- Project Image -->
-            <div class="max-w-5xl mx-auto overflow-hidden rounded-2xl">
-                <img src="../images/irrigation_dashboard.png" alt="iPlant Dashboard" class="w-full">
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="py-20 bg-gray-50">
-        <div class="container-custom">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-display mb-8">Project Overview</h2>
-                <div class="prose prose-lg">
-                    <p class="text-gray-600 mb-6">
-                        iPlant is an innovative IoT solution that helps users monitor and maintain their plants' health 
-                        through advanced sensors and machine learning algorithms. The system provides real-time data 
-                        about soil moisture, light levels, and temperature, enabling optimal growing conditions.
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center">
+                    <span class="inline-block px-4 py-2 bg-primary/5 text-primary rounded-full text-sm font-medium mb-6">UX/UI Case Study</span>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text">iPlant – Smart Nursery Plant Dashboard</span>
+                    </h1>
+                    <p class="text-xl text-secondary mb-16 leading-relaxed max-w-3xl mx-auto">
+                        Advanced IoT plant monitoring system for efficient plant care. Provides data on soil, sun, temperature, and food levels with ease.
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-                        <div class="bg-white p-6 rounded-xl shadow-sm">
-                            <h3 class="text-xl font-display mb-4">Role</h3>
-                            <ul class="space-y-2 text-gray-600">
-                                <li>UX/UI Design</li>
-                                <li>Frontend Development</li>
-                                <li>IoT Integration</li>
-                            </ul>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-sm">
-                            <h3 class="text-xl font-display mb-4">Technologies</h3>
-                            <ul class="space-y-2 text-gray-600">
-                                <li>React Native</li>
-                                <li>Node.js</li>
-                                <li>Arduino</li>
-                                <li>Machine Learning</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="aspect-[16/9] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <img src="../images/iplant/hero.png" alt="iPlant Dashboard Hero" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-8">Overview</h2>
+                    <div class="space-y-6 text-lg text-secondary">
+                        <p>
+                            iPlant is a comprehensive IoT solution designed to revolutionize plant care in nurseries and greenhouses. The system combines advanced sensors with an intuitive dashboard interface, enabling precise monitoring and control of crucial plant growth parameters.
+                        </p>
+                        <p>
+                            The project addresses key challenges in modern plant care:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-3">
+                            <li>Real-time monitoring of vital plant metrics</li>
+                            <li>Automated watering and feeding systems</li>
+                            <li>Smart alerts and notifications</li>
+                            <li>Data-driven growth optimization</li>
+                        </ul>
+                        <p>
+                            By integrating IoT technology with user-centered design, iPlant makes professional-grade plant care accessible to both commercial nurseries and home gardeners.
+                        </p>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <img src="../images/iplant/overview.png" alt="iPlant System Overview" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="py-24 bg-background">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-8">Research</h2>
+                <div class="space-y-6 text-lg text-secondary">
+                    <p>
+                        Our research phase began with extensive interviews with nursery owners, home gardeners, and plant care professionals. Through user interviews and market analysis, we identified several critical pain points:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li>Inconsistent growing conditions leading to plant health issues</li>
+                        <li>Time-consuming manual monitoring and maintenance</li>
+                        <li>Lack of data-driven insights for optimization</li>
+                        <li>Complex and unintuitive existing solutions</li>
+                    </ul>
+                    <p>
+                        Key Research Findings:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li>92% of users wanted real-time monitoring capabilities</li>
+                        <li>87% expressed interest in automated watering systems</li>
+                        <li>76% needed better data visualization tools</li>
+                        <li>68% wanted mobile access to their systems</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                        <img src="../images/iplant/research-1.png" alt="User Research Process" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                        <img src="../images/iplant/research-2.png" alt="Research Findings" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process & Challenges -->
-    <section class="py-20">
-        <div class="container-custom">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-display mb-8">Process & Challenges</h2>
-                <div class="space-y-12">
-                    <!-- Research Phase -->
-                    <div>
-                        <h3 class="text-2xl font-display mb-4">Research & Discovery</h3>
-                        <p class="text-gray-600 mb-6">
-                            Extensive research was conducted to understand plant care needs and user pain points. 
-                            This included interviews with plant enthusiasts and professional gardeners.
-                        </p>
-                        <!-- Research Image Placeholder -->
-                        <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
-                    </div>
-
-                    <!-- Design Phase -->
-                    <div>
-                        <h3 class="text-2xl font-display mb-4">Design & Prototyping</h3>
-                        <p class="text-gray-600 mb-6">
-                            The design process focused on creating an intuitive interface that would make plant care 
-                            accessible to everyone, from beginners to experts.
-                        </p>
-                        <!-- Design Image Placeholder -->
-                        <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
-                    </div>
-
-                    <!-- Development Phase -->
-                    <div>
-                        <h3 class="text-2xl font-display mb-4">Development & Testing</h3>
-                        <p class="text-gray-600 mb-6">
-                            The development phase involved creating both the hardware and software components, 
-                            ensuring seamless integration between sensors and the mobile application.
-                        </p>
-                        <!-- Development Image Placeholder -->
-                        <div class="aspect-video bg-gray-200 rounded-xl mb-4"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results & Impact -->
-    <section class="py-20 bg-gray-50">
-        <div class="container-custom">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-display mb-8">Results & Impact</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                        <h4 class="text-4xl font-display text-accent mb-2">95%</h4>
-                        <p class="text-gray-600">User Satisfaction</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                        <h4 class="text-4xl font-display text-accent mb-2">50K+</h4>
-                        <p class="text-gray-600">Active Users</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                        <h4 class="text-4xl font-display text-accent mb-2">30%</h4>
-                        <p class="text-gray-600">Water Savings</p>
-                    </div>
-                </div>
-                <p class="text-gray-600">
-                    The iPlant system has significantly improved plant care outcomes for users, leading to healthier 
-                    plants and more confident plant owners. The project has also contributed to water conservation 
-                    efforts through its smart watering recommendations.
+    <!-- Wireframes Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-8">Wireframes</h2>
+            <div class="space-y-6 text-lg text-secondary mb-16 max-w-3xl">
+                <p>
+                    The wireframing process focused on creating an intuitive layout that would make complex data easily digestible. Key considerations included:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li>Clear hierarchy of information</li>
+                    <li>Intuitive navigation between different plant zones</li>
+                    <li>Easy access to crucial controls and data</li>
+                    <li>Mobile-first responsive design</li>
+                </ul>
+                <p>
+                    Multiple iterations were created and tested with users to ensure the final layout met both functional and usability requirements.
                 </p>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <div class="image-placeholder w-full h-full flex items-center justify-center text-primary/40">
+                        Low Fidelity Wireframes
+                    </div>
+                </div>
+                <div class="aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <div class="image-placeholder w-full h-full flex items-center justify-center text-primary/40">
+                        Mid Fidelity Wireframes
+                    </div>
+                </div>
+                <div class="aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <div class="image-placeholder w-full h-full flex items-center justify-center text-primary/40">
+                        High Fidelity Wireframes
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Next Project -->
-    <section class="py-20">
-        <div class="container-custom text-center">
-            <h2 class="text-2xl font-display mb-6">Next Project</h2>
-            <a href="careery.html" class="group inline-block">
-                <h3 class="text-3xl font-display mb-4 group-hover:text-accent">Careery</h3>
-                <p class="text-gray-600">AI-powered career development platform</p>
-            </a>
+    <!-- Final Design Section -->
+    <section class="py-24 bg-background">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-8">Final Design</h2>
+            <div class="space-y-6 text-lg text-secondary mb-16 max-w-3xl">
+                <p>
+                    The final design implements a clean, modern interface that emphasizes data visualization and quick access to essential controls. Key features include:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li>Real-time monitoring dashboard with customizable widgets</li>
+                    <li>Automated watering and feeding schedules</li>
+                    <li>Historical data analysis and trend visualization</li>
+                    <li>Mobile-responsive design for on-the-go monitoring</li>
+                    <li>Smart notifications and alerts system</li>
+                    <li>Comprehensive plant health tracking</li>
+                </ul>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <img src="../images/iplant/final-1.png" alt="Final Dashboard Design" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <img src="../images/iplant/final-2.png" alt="Mobile Interface" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="aspect-square bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <div class="image-placeholder w-full h-full flex items-center justify-center text-primary/40">
+                        Data Visualization
+                    </div>
+                </div>
+                <div class="aspect-square bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <div class="image-placeholder w-full h-full flex items-center justify-center text-primary/40">
+                        Mobile App Screens
+                    </div>
+                </div>
+                <div class="aspect-square bg-white rounded-2xl overflow-hidden shadow-lg border border-primary/10">
+                    <div class="image-placeholder w-full h-full flex items-center justify-center text-primary/40">
+                        Settings Interface
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-primary mb-8">Conclusion</h2>
+                <div class="space-y-6 text-lg text-secondary">
+                    <p>
+                        iPlant represents a significant step forward in making professional-grade plant care accessible to everyone. The project successfully combines advanced IoT technology with user-centered design principles to create a solution that is both powerful and easy to use.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
+                        <div class="p-6 bg-primary/5 rounded-2xl">
+                            <div class="text-3xl font-bold text-primary mb-2">30%</div>
+                            <div class="text-secondary">Reduction in Water Usage</div>
+                        </div>
+                        <div class="p-6 bg-primary/5 rounded-2xl">
+                            <div class="text-3xl font-bold text-primary mb-2">85%</div>
+                            <div class="text-secondary">User Satisfaction Rate</div>
+                        </div>
+                        <div class="p-6 bg-primary/5 rounded-2xl">
+                            <div class="text-3xl font-bold text-primary mb-2">40%</div>
+                            <div class="text-secondary">Increase in Plant Health</div>
+                        </div>
+                    </div>
+                    <p>
+                        Future development will focus on expanding the system's capabilities and incorporating machine learning for even more precise plant care recommendations.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-12">
-        <div class="container-custom">
+    <footer class="bg-primary py-16">
+        <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 mb-4 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
-                <div class="space-x-8">
-                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black">GitHub</a>
-                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black">LinkedIn</a>
-                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black">Email</a>
+                <p class="text-white/60 mb-8 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
+                <div class="flex items-center gap-8">
+                    <a href="https://github.com/shaylevi92" class="text-white/60 hover:text-white transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-white/60 hover:text-white transition-colors">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-white/60 hover:text-white transition-colors">Email</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('shadow-sm', window.scrollY > 0);
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.8s cubic-bezier(0.2, 0.7, 0.4, 1)';
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>

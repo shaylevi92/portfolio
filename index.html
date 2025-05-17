@@ -6,104 +6,123 @@
     <title>Shay Levi - UX/UI Designer & Developer</title>
     <link href="css/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #1A1F36, #4B5563);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-gradient {
+            background: linear-gradient(210deg, rgba(26,31,54,0.02) 0%, rgba(75,85,99,0.02) 100%);
+        }
+        .hover-gradient {
+            background: linear-gradient(210deg, rgba(26,31,54,0.05) 0%, rgba(75,85,99,0.05) 100%);
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-background font-inter">
     <!-- Header -->
-    <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="/portfolio" class="text-xl font-display hover:text-accent transition-colors">Shay Levi</a>
+    <header class="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-primary/10">
+        <nav class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/portfolio" class="text-xl font-semibold text-primary hover:text-primary/80 transition-colors">Shay Levi</a>
             <div class="space-x-8">
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#projects" class="text-secondary hover:text-primary transition-colors">Projects</a>
+                <a href="#about" class="text-secondary hover:text-primary transition-colors">About</a>
+                <a href="contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20">
-        <div class="container-custom">
+        <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto">
-                <h1 class="text-display-xl font-display text-center leading-tight mb-8 opacity-0" id="heroTitle">
-                    UX Designer & Developer Creating Meaningful Digital Experiences
+                <h1 class="text-display-xl font-bold text-center leading-tight mb-8 opacity-0" id="heroTitle">
+                    <span class="gradient-text">UX Designer & Developer Creating Meaningful Digital Experiences</span>
                 </h1>
-                <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+                <p class="text-xl text-secondary text-center max-w-2xl mx-auto mb-12 opacity-0 transform translate-y-4" id="heroSubtitle">
                     Passionate about crafting intuitive and innovative solutions that enhance people's lives through thoughtful design and cutting-edge technology
                 </p>
-                <div class="flex justify-center space-x-6">
-                    <a href="#projects" class="btn-primary">View Projects</a>
+                <div class="flex justify-center space-x-6 opacity-0 transform translate-y-4" id="heroButtons">
+                    <a href="#projects" class="px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-sm hover:shadow-md">
+                        View Projects
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="container-custom">
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl font-display text-center mb-16">Featured Projects</h2>
+                <h2 class="text-3xl font-bold text-primary text-center mb-16">Featured Projects</h2>
                 <div class="space-y-24">
                     <!-- iPlant Project -->
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
-                        <div class="relative aspect-video overflow-hidden">
-                            <img src="images/irrigation_dashboard.png" alt="iPlant Dashboard" 
-                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                        </div>
-                        <div class="p-8 md:p-10">
-                            <div class="flex items-center justify-between mb-6">
-                                <h3 class="text-3xl font-display group-hover:text-accent transition-colors">iPlant</h3>
-                                <div class="flex gap-3">
-                                    <span class="px-3 py-1 text-sm bg-emerald-50 text-emerald-700 rounded-full font-medium">IoT</span>
-                                    <span class="px-3 py-1 text-sm bg-blue-50 text-blue-700 rounded-full font-medium">ML</span>
-                                </div>
+                    <div class="group relative bg-white rounded-2xl overflow-hidden border border-primary/10 hover:border-primary/20 transition-all duration-500">
+                        <div class="absolute inset-0 card-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="images/irrigation_dashboard.png" alt="iPlant Dashboard" 
+                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]">
                             </div>
-                            <p class="text-lg text-gray-600 mb-8 leading-relaxed">Smart plant monitoring system using IoT and ML for optimal plant care and growth tracking. Real-time data analysis and automated irrigation control for perfect plant health.</p>
-                            <div class="flex items-center gap-6">
-                                <a href="projects/iplant.html" class="inline-flex items-center px-6 py-3 bg-accent text-white rounded-full font-medium hover:bg-accent/90 transition-colors">
-                                    View Case Study
-                                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
-                                <a href="#" class="inline-flex items-center text-gray-600 hover:text-accent transition-colors">
-                                    Live Demo
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                                    </svg>
-                                </a>
+                            <div class="p-8 md:p-10">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h3 class="text-3xl font-bold text-primary group-hover:text-primary/90 transition-colors">iPlant</h3>
+                                    <div class="flex gap-3">
+                                        <span class="px-3 py-1 text-sm bg-emerald-50 text-emerald-700 rounded-full font-medium">IoT</span>
+                                        <span class="px-3 py-1 text-sm bg-blue-50 text-blue-700 rounded-full font-medium">ML</span>
+                                    </div>
+                                </div>
+                                <p class="text-lg text-secondary mb-8 leading-relaxed">Smart plant monitoring system using IoT and ML for optimal plant care and growth tracking. Real-time data analysis and automated irrigation control for perfect plant health.</p>
+                                <div class="flex items-center gap-6">
+                                    <a href="projects/iplant.html" class="group/link inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-sm hover:shadow-md">
+                                        View Case Study
+                                        <svg class="ml-2 w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="inline-flex items-center text-secondary hover:text-primary transition-colors">
+                                        Live Demo
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Careery Project -->
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
-                        <div class="relative aspect-video overflow-hidden">
-                            <div class="w-full h-full bg-gradient-to-br from-purple-500 via-blue-500 to-emerald-500"></div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                        </div>
-                        <div class="p-8 md:p-10">
-                            <div class="flex items-center justify-between mb-6">
-                                <h3 class="text-3xl font-display group-hover:text-accent transition-colors">Careery</h3>
-                                <div class="flex gap-3">
-                                    <span class="px-3 py-1 text-sm bg-purple-50 text-purple-700 rounded-full font-medium">AI</span>
-                                    <span class="px-3 py-1 text-sm bg-orange-50 text-orange-700 rounded-full font-medium">Career</span>
-                                </div>
+                    <div class="group relative bg-white rounded-2xl overflow-hidden border border-primary/10 hover:border-primary/20 transition-all duration-500">
+                        <div class="absolute inset-0 card-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative">
+                            <div class="aspect-video overflow-hidden">
+                                <div class="w-full h-full bg-gradient-to-br from-primary via-secondary to-accent"></div>
                             </div>
-                            <p class="text-lg text-gray-600 mb-8 leading-relaxed">AI-powered career development platform providing personalized guidance and skill development recommendations. Advanced matching algorithms for optimal career path suggestions.</p>
-                            <div class="flex items-center gap-6">
-                                <a href="projects/careery.html" class="inline-flex items-center px-6 py-3 bg-accent text-white rounded-full font-medium hover:bg-accent/90 transition-colors">
-                                    View Case Study
-                                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
-                                <a href="#" class="inline-flex items-center text-gray-600 hover:text-accent transition-colors">
-                                    Coming Soon
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                                    </svg>
-                                </a>
+                            <div class="p-8 md:p-10">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h3 class="text-3xl font-bold text-primary group-hover:text-primary/90 transition-colors">Careery</h3>
+                                    <div class="flex gap-3">
+                                        <span class="px-3 py-1 text-sm bg-purple-50 text-purple-700 rounded-full font-medium">AI</span>
+                                        <span class="px-3 py-1 text-sm bg-orange-50 text-orange-700 rounded-full font-medium">Career</span>
+                                    </div>
+                                </div>
+                                <p class="text-lg text-secondary mb-8 leading-relaxed">AI-powered career development platform providing personalized guidance and skill development recommendations. Advanced matching algorithms for optimal career path suggestions.</p>
+                                <div class="flex items-center gap-6">
+                                    <a href="projects/careery.html" class="group/link inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-sm hover:shadow-md">
+                                        View Case Study
+                                        <svg class="ml-2 w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="inline-flex items-center text-secondary hover:text-primary transition-colors">
+                                        Coming Soon
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,17 +132,17 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="container-custom">
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-display mb-8">About Me</h2>
+                <h2 class="text-3xl font-bold text-primary mb-8">About Me</h2>
                 <div class="space-y-8">
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-secondary">
                         I'm a UX designer and developer with a passion for creating meaningful digital experiences. 
                         My work focuses on the intersection of design and technology, always striving to create 
                         solutions that are both beautiful and functional.
                     </p>
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-secondary">
                         With experience in both design and development, I bring a unique perspective to every project, 
                         ensuring that the end result not only looks great but also works flawlessly.
                     </p>
@@ -133,98 +152,82 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-16">
-        <div class="container-custom">
+    <footer class="bg-primary py-16">
+        <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 mb-6 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
+                <p class="text-white/60 mb-6 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
                 <div class="space-x-8">
-                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black transition-colors">GitHub</a>
-                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black transition-colors">LinkedIn</a>
-                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black transition-colors">Email</a>
+                    <a href="https://github.com/shaylevi92" class="text-white/60 hover:text-white transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-white/60 hover:text-white transition-colors">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-white/60 hover:text-white transition-colors">Email</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Add shadow to header on scroll
+        // Modern staggered reveal animation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero title animation
+            const heroTitle = document.getElementById('heroTitle');
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transition = 'opacity 1s cubic-bezier(0.2, 0.7, 0.4, 1)';
+
+            // Hero subtitle animation
+            const heroSubtitle = document.getElementById('heroSubtitle');
+            setTimeout(() => {
+                heroSubtitle.style.opacity = '1';
+                heroSubtitle.style.transform = 'translateY(0)';
+                heroSubtitle.style.transition = 'all 1s cubic-bezier(0.2, 0.7, 0.4, 1)';
+            }, 200);
+
+            // Hero buttons animation
+            const heroButtons = document.getElementById('heroButtons');
+            setTimeout(() => {
+                heroButtons.style.opacity = '1';
+                heroButtons.style.transform = 'translateY(0)';
+                heroButtons.style.transition = 'all 1s cubic-bezier(0.2, 0.7, 0.4, 1)';
+            }, 400);
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header shadow on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             header.classList.toggle('shadow-sm', window.scrollY > 0);
         });
 
-        // Modern staggered text reveal animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const heroTitle = document.getElementById('heroTitle');
-            const text = heroTitle.textContent.trim();
-            heroTitle.textContent = '';
-            heroTitle.style.opacity = '1';
-            
-            const textWrapper = document.createElement('div');
-            textWrapper.style.cssText = `
-                display: inline-block;
-                position: relative;
-            `;
-            heroTitle.appendChild(textWrapper);
-            
-            text.split('').forEach((char, index) => {
-                const charContainer = document.createElement('div');
-                charContainer.style.cssText = `
-                    display: inline-block;
-                    position: relative;
-                    overflow: hidden;
-                    vertical-align: bottom;
-                    margin: 0;
-                    padding: 0;
-                `;
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
 
-                const charContent = document.createElement('span');
-                charContent.textContent = char === ' ' ? '\u00A0' : char;
-                charContent.style.cssText = `
-                    display: inline-block;
-                    transform: translateY(100%);
-                    opacity: 0;
-                    white-space: pre;
-                    will-change: transform, opacity;
-                `;
-
-                // Calculate precise timing for each character
-                const startDelay = index * 40;
-                const animationDuration = 800;
-                
-                // Apply modern animation with custom timing function
-                charContent.animate([
-                    {
-                        transform: 'translateY(100%)',
-                        opacity: 0
-                    },
-                    {
-                        transform: 'translateY(0)',
-                        opacity: 1
-                    }
-                ], {
-                    duration: animationDuration,
-                    delay: startDelay,
-                    easing: 'cubic-bezier(0.2, 0.7, 0.4, 1)',
-                    fill: 'forwards'
-                });
-
-                charContainer.appendChild(charContent);
-                textWrapper.appendChild(charContainer);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-        });
+        }, observerOptions);
 
-        // Enhance project cards interaction
+        // Observe all project cards
         document.querySelectorAll('.group').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-8px) scale(1.01)';
-                card.style.transition = 'all 400ms cubic-bezier(0.2, 0.7, 0.4, 1)';
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) scale(1)';
-                card.style.transition = 'all 400ms cubic-bezier(0.2, 0.7, 0.4, 1)';
-            });
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.8s cubic-bezier(0.2, 0.7, 0.4, 1)';
+            observer.observe(card);
         });
     </script>
 </body>
