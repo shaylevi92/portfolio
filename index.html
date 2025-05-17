@@ -121,37 +121,46 @@
             header.classList.toggle('shadow-sm', window.scrollY > 0);
         });
 
-        // Modern hero text animation with precise masking
+        // Independent character animation for hero text
         document.addEventListener('DOMContentLoaded', () => {
             const heroTitle = document.getElementById('heroTitle');
             const text = heroTitle.textContent.trim();
             heroTitle.textContent = '';
             heroTitle.style.opacity = '1';
             
+            // Create a wrapper for all characters
+            const textWrapper = document.createElement('div');
+            textWrapper.style.display = 'inline-block';
+            textWrapper.style.position = 'relative';
+            heroTitle.appendChild(textWrapper);
+            
             text.split('').forEach((char, index) => {
+                // Container for each character
                 const charContainer = document.createElement('span');
-                charContainer.style.display = 'inline-block';
-                charContainer.style.position = 'relative';
-                charContainer.style.overflow = 'hidden';
-                charContainer.style.verticalAlign = 'top';
+                charContainer.style.cssText = `
+                    display: inline-block;
+                    position: relative;
+                    vertical-align: top;
+                    margin: 0;
+                    padding: 0;
+                `;
                 
+                // The actual character
                 const charSpan = document.createElement('span');
                 charSpan.textContent = char === ' ' ? '\u00A0' : char;
-                charSpan.style.display = 'block';
-                charSpan.style.transform = 'translateY(100%)';
-                charSpan.style.opacity = '0';
-                
-                // Precise animation timing and easing
-                charSpan.style.transition = `
-                    transform 800ms cubic-bezier(0.2, 0.7, 0.4, 1),
-                    opacity 400ms ease-in-out
+                charSpan.style.cssText = `
+                    display: inline-block;
+                    transform: translateY(100%);
+                    opacity: 0;
+                    transition: transform 600ms cubic-bezier(0.2, 0.7, 0.4, 1) ${index * 35}ms,
+                              opacity 300ms ease-in-out ${index * 35}ms;
+                    white-space: pre;
                 `;
-                charSpan.style.transitionDelay = `${index * 40}ms`;
                 
                 charContainer.appendChild(charSpan);
-                heroTitle.appendChild(charContainer);
+                textWrapper.appendChild(charContainer);
                 
-                // Trigger animation after a small delay
+                // Trigger animation with slight delay
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
                         charSpan.style.transform = 'translateY(0)';
