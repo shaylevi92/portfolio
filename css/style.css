@@ -22,10 +22,14 @@
     @apply text-base text-gray-600 hover:text-black transition-colors tracking-wide;
   }
   .btn-primary {
-    @apply bg-accent text-white px-8 py-3.5 rounded-full hover:bg-opacity-90 transition-all text-base font-medium tracking-wide;
+    @apply inline-flex items-center justify-center bg-accent text-white px-8 py-3.5 rounded-xl 
+           hover:bg-opacity-90 transition-all text-base font-medium tracking-wide transform hover:scale-[1.02];
   }
   .section-title {
     @apply text-4xl md:text-5xl font-display mb-16 text-center tracking-tight leading-tight;
+  }
+  .text-display-xl {
+    @apply text-5xl md:text-6xl lg:text-7xl font-display leading-[1.1] tracking-tight;
   }
   .hero-title {
     @apply text-5xl md:text-6xl lg:text-7xl font-display leading-[1.1] tracking-tight mb-8;
@@ -34,20 +38,13 @@
     @apply text-xl md:text-2xl text-gray-600 leading-relaxed tracking-normal max-w-2xl mx-auto mb-12;
   }
   .project-card {
-    @apply bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all;
-  }
-  .project-card-large {
-    @apply bg-white rounded-2xl p-8 md:p-12 transition-all duration-300;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-  .project-card-large:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    @apply bg-white rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-lg transition-all duration-300;
   }
   .project-title {
-    @apply text-3xl md:text-4xl font-display mb-4 group-hover:text-accent transition-colors tracking-tight;
+    @apply text-3xl font-display mb-4 group-hover:text-accent transition-colors;
   }
   .project-description {
-    @apply text-lg md:text-xl text-gray-600 leading-relaxed tracking-normal;
+    @apply text-lg text-gray-600;
   }
   .about-text {
     @apply text-lg md:text-xl text-gray-600 leading-relaxed tracking-normal;
