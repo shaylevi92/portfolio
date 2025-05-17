@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shay Levi - UX/UI Designer & Developer</title>
-    <link href="css/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="antialiased">
@@ -121,27 +120,33 @@
             header.classList.toggle('shadow-sm', window.scrollY > 0);
         });
 
-        // Hero text animation
+        // Hero text animation with mask effect
         document.addEventListener('DOMContentLoaded', () => {
             const heroTitle = document.getElementById('heroTitle');
             const text = heroTitle.textContent.trim();
             heroTitle.textContent = '';
             heroTitle.style.opacity = '1';
             
-            let delay = 0;
             text.split('').forEach((char, index) => {
-                const span = document.createElement('span');
-                span.textContent = char;
-                span.style.opacity = '0';
-                span.style.display = 'inline-block';
-                span.style.transform = 'translateY(20px)';
-                span.style.transition = 'all 0.3s ease';
-                heroTitle.appendChild(span);
+                const wrapper = document.createElement('div');
+                wrapper.style.display = 'inline-block';
+                wrapper.style.overflow = 'hidden';
+                wrapper.style.verticalAlign = 'top';
                 
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char; // Replace space with non-breaking space
+                span.style.display = 'inline-block';
+                span.style.transform = 'translateY(100%)';
+                span.style.transition = `transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)`;
+                span.style.transitionDelay = `${index * 50}ms`;
+                
+                wrapper.appendChild(span);
+                heroTitle.appendChild(wrapper);
+                
+                // Trigger the animation after a small delay
                 setTimeout(() => {
-                    span.style.opacity = '1';
                     span.style.transform = 'translateY(0)';
-                }, 50 * index);
+                }, 100);
             });
         });
     </script>
