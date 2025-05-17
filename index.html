@@ -44,37 +44,49 @@
                 <h2 class="text-3xl font-display text-center mb-16">Featured Projects</h2>
                 <div class="space-y-24">
                     <!-- iPlant Project -->
-                    <a href="projects/iplant.html" class="group block">
-                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-lg transition-all duration-300">
-                            <div class="relative overflow-hidden rounded-2xl mb-8 aspect-video">
-                                <img src="images/irrigation_dashboard.png" alt="iPlant Dashboard" 
-                                     class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105">
-                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span class="text-white text-lg font-medium">View Project</span>
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                        <div class="relative aspect-video">
+                            <img src="images/irrigation_dashboard.png" alt="iPlant Dashboard" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div class="p-8 md:p-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-3xl font-display group-hover:text-accent transition-colors">iPlant</h3>
+                                <div class="flex gap-3">
+                                    <span class="px-3 py-1 text-sm bg-emerald-50 text-emerald-700 rounded-full">IoT</span>
+                                    <span class="px-3 py-1 text-sm bg-blue-50 text-blue-700 rounded-full">ML</span>
                                 </div>
                             </div>
-                            <div class="max-w-3xl">
-                                <h3 class="text-3xl font-display mb-4 group-hover:text-accent transition-colors">iPlant</h3>
-                                <p class="text-lg text-gray-600">Smart plant monitoring system using IoT and ML for optimal plant care and growth tracking</p>
+                            <p class="text-lg text-gray-600 mb-8">Smart plant monitoring system using IoT and ML for optimal plant care and growth tracking. Real-time data analysis and automated irrigation control for perfect plant health.</p>
+                            <div class="flex items-center gap-6">
+                                <a href="projects/iplant.html" class="btn-primary">View Case Study</a>
+                                <a href="#" class="text-gray-600 hover:text-accent transition-colors">Live Demo →</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                     
                     <!-- Careery Project -->
-                    <a href="projects/careery.html" class="group block">
-                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-lg transition-all duration-300">
-                            <div class="relative overflow-hidden rounded-2xl mb-8 aspect-video">
-                                <div class="w-full h-full bg-gray-200 transform transition-transform duration-500 group-hover:scale-105"></div>
-                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span class="text-white text-lg font-medium">View Project</span>
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                        <div class="relative aspect-video">
+                            <div class="w-full h-full bg-gradient-to-r from-blue-500 to-purple-600"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div class="p-8 md:p-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-3xl font-display group-hover:text-accent transition-colors">Careery</h3>
+                                <div class="flex gap-3">
+                                    <span class="px-3 py-1 text-sm bg-purple-50 text-purple-700 rounded-full">AI</span>
+                                    <span class="px-3 py-1 text-sm bg-orange-50 text-orange-700 rounded-full">Career</span>
                                 </div>
                             </div>
-                            <div class="max-w-3xl">
-                                <h3 class="text-3xl font-display mb-4 group-hover:text-accent transition-colors">Careery</h3>
-                                <p class="text-lg text-gray-600">AI-powered career development platform for personalized guidance and skill development</p>
+                            <p class="text-lg text-gray-600 mb-8">AI-powered career development platform providing personalized guidance and skill development recommendations. Advanced matching algorithms for optimal career path suggestions.</p>
+                            <div class="flex items-center gap-6">
+                                <a href="projects/careery.html" class="btn-primary">View Case Study</a>
+                                <a href="#" class="text-gray-600 hover:text-accent transition-colors">Coming Soon →</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,50 +133,68 @@
             header.classList.toggle('shadow-sm', window.scrollY > 0);
         });
 
-        // Independent character animation for hero text
+        // Dynamic masked animation for hero text
         document.addEventListener('DOMContentLoaded', () => {
             const heroTitle = document.getElementById('heroTitle');
             const text = heroTitle.textContent.trim();
             heroTitle.textContent = '';
             heroTitle.style.opacity = '1';
             
-            // Create a wrapper for all characters
             const textWrapper = document.createElement('div');
             textWrapper.style.display = 'inline-block';
             textWrapper.style.position = 'relative';
             heroTitle.appendChild(textWrapper);
             
             text.split('').forEach((char, index) => {
-                // Container for each character
+                // Create container with mask
                 const charContainer = document.createElement('span');
                 charContainer.style.cssText = `
                     display: inline-block;
                     position: relative;
                     vertical-align: top;
+                    overflow: hidden;
+                    height: 1.2em;
                     margin: 0;
                     padding: 0;
                 `;
                 
-                // The actual character
+                // Create mask element
+                const mask = document.createElement('span');
+                mask.style.cssText = `
+                    display: block;
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(to bottom, transparent, white 50%);
+                    transform: translateY(-101%);
+                    transition: transform 600ms cubic-bezier(0.33, 1, 0.68, 1) ${index * 35}ms,
+                              height 400ms ease-out ${index * 35 + 600}ms;
+                `;
+                
+                // Create character element
                 const charSpan = document.createElement('span');
                 charSpan.textContent = char === ' ' ? '\u00A0' : char;
                 charSpan.style.cssText = `
-                    display: inline-block;
+                    display: block;
                     transform: translateY(100%);
-                    opacity: 0;
-                    transition: transform 600ms cubic-bezier(0.2, 0.7, 0.4, 1) ${index * 35}ms,
-                              opacity 300ms ease-in-out ${index * 35}ms;
+                    transition: transform 600ms cubic-bezier(0.33, 1, 0.68, 1) ${index * 35}ms;
                     white-space: pre;
                 `;
                 
+                // Build structure
                 charContainer.appendChild(charSpan);
+                charContainer.appendChild(mask);
                 textWrapper.appendChild(charContainer);
                 
-                // Trigger animation with slight delay
+                // Trigger animation
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
                         charSpan.style.transform = 'translateY(0)';
-                        charSpan.style.opacity = '1';
+                        mask.style.transform = 'translateY(0)';
+                        
+                        // Fade out mask after character rises
+                        setTimeout(() => {
+                            mask.style.height = '0';
+                        }, index * 35 + 600);
                     });
                 });
             });
