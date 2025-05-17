@@ -11,7 +11,7 @@
     <!-- Header -->
     <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="#home" class="text-xl font-display">Shay Levi</a>
+            <a href="/" class="text-xl font-display hover:text-accent transition-colors">Shay Levi</a>
             <div class="space-x-8">
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#about" class="nav-link">About</a>
@@ -21,16 +21,6 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-light to-white">
-        <div class="container text-center fade-in">
-            <div class="max-w-4xl mx-auto space-y-8">
-                <h1 class="text-5xl md:text-6xl font-bold text-primary leading-tight">
-                    Creating Meaningful Digital Experiences
-                </h1>
-                <p class="text-xl text-secondary max-w-2xl mx-auto">
-                    UX/UI Designer & Developer specializing in crafting innovative and intuitive solutions that enhance people's lives through technology.
-                </p>
-                <img src="images/irrigation_dashboard.png" alt="Irrigation Dashboard" class="mx-auto my-8">
     <section class="pt-32 pb-20 md:pt-40 md:pb-28">
         <div class="container-custom">
             <h1 class="text-display-xl font-display text-center max-w-4xl mx-auto leading-tight mb-8">
@@ -49,30 +39,31 @@
     <section id="projects" class="py-20 bg-gray-50">
         <div class="container-custom">
             <h2 class="section-title">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 gap-16">
                 <!-- iPlant Project -->
-                <a href="projects/iplant.html" class="project-card group">
-                    <div class="aspect-video bg-gray-200 rounded-xl mb-4 transform transition-transform duration-300 hover:scale-105">
-                        <img src="images/iplant_large.png" alt="iPlant Project" class="w-full h-full object-cover">
+                <a href="projects/iplant.html" class="group">
+                    <div class="project-card-large">
+                        <div class="relative overflow-hidden rounded-2xl mb-6">
+                            <img src="images/irrigation_dashboard.png" alt="iPlant Dashboard" class="w-full transform transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="max-w-2xl mx-auto">
+                            <h3 class="text-3xl font-display mb-4 group-hover:text-accent transition-colors">iPlant</h3>
+                            <p class="text-xl text-gray-600">Smart plant monitoring system using IoT and ML for optimal plant care and growth tracking</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">iPlant</h3>
-                    <p class="text-gray-600">Smart plant monitoring system for optimal growth</p>
                 </a>
+                
                 <!-- Careery Project -->
-                <a href="projects/careery.html" class="project-card group">
-                    <div class="aspect-video bg-gray-200 rounded-xl mb-4 transform transition-transform duration-300 hover:scale-105">
-                        <img src="images/careery_large.png" alt="Careery Project" class="w-full h-full object-cover">
+                <a href="projects/careery.html" class="group">
+                    <div class="project-card-large">
+                        <div class="relative overflow-hidden rounded-2xl mb-6">
+                            <div class="aspect-video bg-gray-200 transform transition-transform duration-500 group-hover:scale-105"></div>
+                        </div>
+                        <div class="max-w-2xl mx-auto">
+                            <h3 class="text-3xl font-display mb-4 group-hover:text-accent transition-colors">Careery</h3>
+                            <p class="text-xl text-gray-600">AI-powered career development platform for personalized guidance and skill development</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">Careery</h3>
-                    <p class="text-gray-600">AI-powered career development platform</p>
-                </a>
-                <!-- Eye Tracking Project -->
-                <a href="projects/eye-tracking.html" class="project-card group">
-                    <div class="aspect-video bg-gray-200 rounded-xl mb-4 transform transition-transform duration-300 hover:scale-105">
-                        <img src="images/eye_tracking_large.png" alt="Eye Tracking Project" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-2xl font-display mb-2 group-hover:text-accent">Eye Tracking Research</h3>
-                    <p class="text-gray-600">Advanced eye tracking solutions for research</p>
                 </a>
             </div>
         </div>
@@ -102,24 +93,11 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-600 mb-4 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
                 <div class="space-x-8">
-                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black">GitHub</a>
-                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black">LinkedIn</a>
-                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black">Email</a>
+                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black transition-colors">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black transition-colors">Email</a>
                 </div>
             </div>
-        </div>
-    </footer>
-
-    <!-- Footer -->
-    <footer class="bg-primary text-white py-16">
-        <div class="container text-center">
-            <h2 class="text-3xl font-bold mb-8">Let's Create Something Amazing</h2>
-            <div class="flex justify-center gap-8 mb-12">
-                <a href="https://github.com/shaylevi92" class="text-lg hover:text-accent transition-colors">GitHub</a>
-                <a href="https://linkedin.com/in/shaylevi92" class="text-lg hover:text-accent transition-colors">LinkedIn</a>
-                <a href="mailto:contact@shaylevi.com" class="text-lg hover:text-accent transition-colors">Email</a>
-            </div>
-            <p class="text-secondary-light">&copy; 2024 Shay Levi. All rights reserved.</p>
         </div>
     </footer>
 
@@ -127,25 +105,8 @@
         // Add shadow to header on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            header.classList.toggle('shadow-custom', window.scrollY > 0);
+            header.classList.toggle('shadow-sm', window.scrollY > 0);
         });
-
-        // Fade in elements on scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
     </script>
 </body>
 </html> 
