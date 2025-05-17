@@ -121,7 +121,7 @@
             header.classList.toggle('shadow-sm', window.scrollY > 0);
         });
 
-        // Simple and precise hero text animation
+        // Modern hero text animation with precise masking
         document.addEventListener('DOMContentLoaded', () => {
             const heroTitle = document.getElementById('heroTitle');
             const text = heroTitle.textContent.trim();
@@ -129,31 +129,33 @@
             heroTitle.style.opacity = '1';
             
             text.split('').forEach((char, index) => {
-                const wrapper = document.createElement('div');
-                wrapper.style.cssText = `
-                    display: inline-block;
-                    overflow: hidden;
-                    vertical-align: top;
+                const charContainer = document.createElement('span');
+                charContainer.style.display = 'inline-block';
+                charContainer.style.position = 'relative';
+                charContainer.style.overflow = 'hidden';
+                charContainer.style.verticalAlign = 'top';
+                
+                const charSpan = document.createElement('span');
+                charSpan.textContent = char === ' ' ? '\u00A0' : char;
+                charSpan.style.display = 'block';
+                charSpan.style.transform = 'translateY(100%)';
+                charSpan.style.opacity = '0';
+                
+                // Precise animation timing and easing
+                charSpan.style.transition = `
+                    transform 800ms cubic-bezier(0.2, 0.7, 0.4, 1),
+                    opacity 400ms ease-in-out
                 `;
+                charSpan.style.transitionDelay = `${index * 40}ms`;
                 
-                const span = document.createElement('span');
-                span.textContent = char === ' ' ? '\u00A0' : char;
-                span.style.cssText = `
-                    display: inline-block;
-                    transform: translateY(100%);
-                    opacity: 0;
-                    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-                    transition-delay: ${index * 50}ms;
-                `;
+                charContainer.appendChild(charSpan);
+                heroTitle.appendChild(charContainer);
                 
-                wrapper.appendChild(span);
-                heroTitle.appendChild(wrapper);
-                
-                // Trigger the animation after a brief delay
+                // Trigger animation after a small delay
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
-                        span.style.transform = 'translateY(0)';
-                        span.style.opacity = '1';
+                        charSpan.style.transform = 'translateY(0)';
+                        charSpan.style.opacity = '1';
                     });
                 });
             });
