@@ -11,7 +11,7 @@
     <!-- Header -->
     <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="/" class="text-xl font-display hover:text-accent transition-colors">Shay Levi</a>
+            <a href="/portfolio" class="text-xl font-display hover:text-accent transition-colors">Shay Levi</a>
             <div class="space-x-8">
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#about" class="nav-link">About</a>
@@ -121,7 +121,7 @@
             header.classList.toggle('shadow-sm', window.scrollY > 0);
         });
 
-        // Hero text animation with mask effect
+        // Enhanced hero text animation with precise masking
         document.addEventListener('DOMContentLoaded', () => {
             const heroTitle = document.getElementById('heroTitle');
             const text = heroTitle.textContent.trim();
@@ -133,23 +133,48 @@
                 wrapper.style.display = 'inline-block';
                 wrapper.style.overflow = 'hidden';
                 wrapper.style.verticalAlign = 'top';
-                wrapper.style.height = '1.1em';
+                wrapper.style.height = '1.2em';
+                wrapper.style.position = 'relative';
                 
                 const span = document.createElement('span');
                 span.textContent = char === ' ' ? '\u00A0' : char;
                 span.style.display = 'inline-block';
                 span.style.transform = 'translateY(100%)';
-                span.style.transition = `transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)`;
-                span.style.transitionDelay = `${index * 50}ms`;
+                span.style.opacity = '0';
+                span.style.position = 'relative';
+                
+                span.style.transition = `
+                    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    opacity 0.3s ease-in-out
+                `;
+                span.style.transitionDelay = `${index * 60}ms`;
                 
                 wrapper.appendChild(span);
                 heroTitle.appendChild(wrapper);
                 
-                // Trigger the animation after a small delay
                 setTimeout(() => {
                     span.style.transform = 'translateY(0)';
+                    span.style.opacity = '1';
                 }, 100);
+
+                span.addEventListener('mouseover', () => {
+                    span.style.transform = 'translateY(-2px)';
+                    span.style.transition = 'transform 0.2s ease';
+                });
+                
+                span.addEventListener('mouseout', () => {
+                    span.style.transform = 'translateY(0)';
+                });
             });
+
+            const totalDuration = text.length * 60 + 600;
+            setTimeout(() => {
+                const allSpans = heroTitle.querySelectorAll('span');
+                allSpans.forEach((span, i) => {
+                    span.style.transition = 'transform 0.3s ease';
+                    span.style.transformOrigin = 'center';
+                });
+            }, totalDuration);
         });
     </script>
 </body>

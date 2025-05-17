@@ -8,13 +8,13 @@
 </head>
 <body class="antialiased">
     <!-- Header -->
-    <header class="fixed w-full glass-effect z-50 border-b border-gray-100">
+    <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <nav class="container-custom h-16 flex items-center justify-between">
-            <a href="../index.html" class="text-xl font-display hover-lift">Shay Levi</a>
+            <a href="/portfolio" class="text-xl font-display hover:text-accent transition-colors">Shay Levi</a>
             <div class="space-x-8">
-                <a href="../index.html#projects" class="nav-link">Projects</a>
-                <a href="../index.html#about" class="nav-link">About</a>
-                <a href="../contact.html" class="nav-link">Contact</a>
+                <a href="/portfolio/#projects" class="nav-link">Projects</a>
+                <a href="/portfolio/#about" class="nav-link">About</a>
+                <a href="/portfolio/contact.html" class="nav-link">Contact</a>
             </div>
         </nav>
     </header>
@@ -28,8 +28,10 @@
             <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
                 Empowering career growth through personalized AI guidance and skill development
             </p>
-            <!-- Project Image Placeholder -->
-            <div class="aspect-video bg-gray-200 rounded-2xl max-w-5xl mx-auto"></div>
+            <!-- Project Image -->
+            <div class="max-w-5xl mx-auto overflow-hidden rounded-2xl">
+                <div class="aspect-video bg-gray-200"></div>
+            </div>
         </div>
     </section>
 
@@ -40,26 +42,25 @@
                 <h2 class="text-3xl font-display mb-8">Project Overview</h2>
                 <div class="prose prose-lg">
                     <p class="text-gray-600 mb-6">
-                        Careery is an innovative career development platform that leverages AI to provide personalized 
-                        career guidance, skill recommendations, and learning pathways. The platform analyzes user profiles, 
-                        market trends, and industry requirements to create tailored career development plans.
+                        Careery is an innovative AI-powered platform that helps users navigate their career path 
+                        through personalized guidance, skill assessments, and targeted learning recommendations.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
                         <div class="bg-white p-6 rounded-xl shadow-sm">
                             <h3 class="text-xl font-display mb-4">Role</h3>
                             <ul class="space-y-2 text-gray-600">
-                                <li>Full Stack Development</li>
+                                <li>UX/UI Design</li>
+                                <li>Frontend Development</li>
                                 <li>AI Integration</li>
-                                <li>UX Research</li>
                             </ul>
                         </div>
                         <div class="bg-white p-6 rounded-xl shadow-sm">
                             <h3 class="text-xl font-display mb-4">Technologies</h3>
                             <ul class="space-y-2 text-gray-600">
-                                <li>React.js</li>
+                                <li>React</li>
                                 <li>Node.js</li>
                                 <li>OpenAI API</li>
-                                <li>MongoDB</li>
+                                <li>Machine Learning</li>
                             </ul>
                         </div>
                     </div>
@@ -144,20 +145,20 @@
             <h2 class="text-2xl font-display mb-6">Next Project</h2>
             <a href="iplant.html" class="group inline-block">
                 <h3 class="text-3xl font-display mb-4 group-hover:text-accent">iPlant</h3>
-                <p class="text-gray-600">Smart plant monitoring system using IoT and ML</p>
+                <p class="text-gray-600">Smart plant monitoring system</p>
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-12">
+    <footer class="bg-gray-50 py-16">
         <div class="container-custom">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 mb-4 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
+                <p class="text-gray-600 mb-6 md:mb-0">&copy; 2024 Shay Levi. All rights reserved.</p>
                 <div class="space-x-8">
-                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black">GitHub</a>
-                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black">LinkedIn</a>
-                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black">Email</a>
+                    <a href="https://github.com/shaylevi92" class="text-gray-600 hover:text-black transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/shaylevi92" class="text-gray-600 hover:text-black transition-colors">LinkedIn</a>
+                    <a href="mailto:contact@shaylevi.com" class="text-gray-600 hover:text-black transition-colors">Email</a>
                 </div>
             </div>
         </div>
